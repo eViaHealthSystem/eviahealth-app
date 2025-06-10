@@ -1,0 +1,63 @@
+# Archivos específicos de Android Studio y compilación dentro de 'app/'
+app/*.apk
+app/*.aab
+app/*.ap_
+app/*.dex
+app/*.class
+app/*.aar
+app/*.iml
+app/bin/
+app/gen/
+app/out/
+app/app/release/*
+app/app/debug/*
+app/local.properties
+app/*.log
+app/.navigation/
+app/captures/
+app/.idea/
+app/.gradle/
+app/build/
+app/.cxx/
+app/.externalNativeBuild/
+app/.externalNativeBuild
+app/.cxx/
+app/gradle-wrapper.jar
+app/gradle-wrapper.properties
+# app/*.jks  # Descomentar si no quieres versionar tus keystores
+# app/*.keystore # Descomentar si no quieres versionar tus keystores
+app/.firebase/
+app/google-services.json # Si contiene datos sensibles
+app/app/build/reports/
+app/app/build/test-results/
+app/lint/intermediates/
+app/lint/generated/
+app/lint/outputs/
+app/lint/tmp/
+app/.idea/caches/
+# app/.idea/libraries/
+app/.idea/modules.xml
+app/.idea/workspace.xml
+app/.idea/tasks.xml
+app/.idea/assetWizardSettings.xml
+app/.idea/dictionaries
+app/.idea/navEditor.xml
+app/.kaptStubs/
+app/obj/
+
+#Mis módulos extra
+app/AliveCorKitLite/build/
+app/AliveCorKitLit/*.aar
+app/mobilertc/build/
+app/mobilertc/*.aar
+app/terminalio/build/
+
+# Archivos genéricos del sistema operativo
+.DS_Store # macOS
+Thumbs.db # Windows
+desktop.ini # Windows
+
+# Reglas específicas para 'otra_carpeta/' (si las hubiera)
+# Por ejemplo, si 'otra_carpeta' tiene sus propios archivos a ignorar
+# otra_carpeta/temp/
+# otra_carpeta/*.log
