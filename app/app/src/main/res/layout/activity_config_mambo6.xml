@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="horizontal"
+    android:background="@drawable/fondo_base_logo"
+    android:keepScreenOn="true"
+    tools:context=".ui.config.mb6.config_Mambo6">
+
+    <!--    Titulo-->
+    <TextView
+        android:id="@+id/CMB6_txtTitulo"
+        android:layout_width="807dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="110dp"
+        android:fontFamily="@font/questrial"
+        android:singleLine="false"
+        android:text="Configuración dispositivo MAMBO 6 [00:00:00:00:00:00]"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    Idioma-->
+    <TextView
+        android:id="@+id/CMB6txtLanguage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Idioma"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CMB6_txtTitulo" />
+
+    <!--   Spinner language-->
+    <Spinner
+        android:id="@+id/CMB6_cmbLanguage"
+        android:layout_width="200dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="180dp"
+        app:layout_constraintBottom_toBottomOf="@+id/CMB6txtLanguage"
+        app:layout_constraintStart_toEndOf="@+id/CMB6txtLanguage"
+        app:layout_constraintTop_toTopOf="@+id/CMB6txtLanguage"
+        app:strokeColor="@color/black"
+        app:strokeWidth="6dp" />
+
+    <!--    Brazo-->
+    <TextView
+        android:id="@+id/CMB6txtBrazo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Brazo"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/CMB6txtLanguage"
+        app:layout_constraintTop_toBottomOf="@+id/CMB6txtLanguage" />
+
+    <!--   Spinner Brazo-->
+    <Spinner
+        android:id="@+id/CMB6_cmbBrazo"
+        android:layout_width="200dp"
+        android:layout_height="44dp"
+        app:layout_constraintBottom_toBottomOf="@+id/CMB6txtBrazo"
+        app:layout_constraintStart_toStartOf="@+id/CMB6_cmbLanguage"
+        app:layout_constraintTop_toTopOf="@+id/CMB6txtBrazo"
+        app:strokeColor="@color/black"
+        app:strokeWidth="6dp" />
+
+    <!--    No Molestar-->
+    <TextView
+        android:id="@+id/CMB6txtQuietMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Modo No Molestar"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/CMB6txtBrazo"
+        app:layout_constraintTop_toBottomOf="@+id/CMB6txtBrazo" />
+
+    <!--   Spinner No Molestar-->
+    <Spinner
+        android:id="@+id/CMB6_cmbQuietMode"
+        android:layout_width="200dp"
+        android:layout_height="44dp"
+        app:layout_constraintBottom_toBottomOf="@+id/CMB6txtQuietMode"
+        app:layout_constraintStart_toStartOf="@+id/CMB6_cmbLanguage"
+        app:layout_constraintTop_toTopOf="@+id/CMB6txtQuietMode"
+        app:strokeColor="@color/black"
+        app:strokeWidth="6dp" />
+
+    <!--    Heart Rate-->
+    <TextView
+        android:id="@+id/CMB6txtHeartRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Medición contínua\nFrecuencia cardíaca"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/CMB6txtQuietMode"
+        app:layout_constraintTop_toBottomOf="@+id/CMB6txtQuietMode" />
+
+    <!--   Spinner Heart Rate-->
+    <Spinner
+        android:id="@+id/CMB6_cmbHeartRate"
+        android:layout_width="200dp"
+        android:layout_height="44dp"
+        app:layout_constraintBottom_toBottomOf="@+id/CMB6txtHeartRate"
+        app:layout_constraintStart_toStartOf="@+id/CMB6_cmbLanguage"
+        app:layout_constraintTop_toTopOf="@+id/CMB6txtHeartRate"
+        app:strokeColor="@color/black"
+        app:strokeWidth="6dp" />
+
+    <!--    Blood Oxygen-->
+    <TextView
+        android:id="@+id/CMB6txtBloodOxygen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Medición contínua\nOxígeno en sangre"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/CMB6txtHeartRate"
+        app:layout_constraintTop_toBottomOf="@+id/CMB6txtHeartRate" />
+
+    <!--   Spinner Blood Oxygen-->
+    <Spinner
+        android:id="@+id/CMB6_cmbBloodOxygen"
+        android:layout_width="200dp"
+        android:layout_height="44dp"
+        app:layout_constraintBottom_toBottomOf="@+id/CMB6txtBloodOxygen"
+        app:layout_constraintStart_toStartOf="@+id/CMB6_cmbLanguage"
+        app:layout_constraintTop_toTopOf="@+id/CMB6txtBloodOxygen"
+        app:strokeColor="@color/black"
+        app:strokeWidth="6dp" />
+
+    <!--    Recordatorio Inactividad-->
+    <TextView
+        android:id="@+id/CMB6txtInactividad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Recordatorio\nInactividad"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/CMB6txtBloodOxygen"
+        app:layout_constraintTop_toBottomOf="@+id/CMB6txtBloodOxygen" />
+
+    <!--   Spinner Recordatorio Inactividad-->
+    <Spinner
+        android:id="@+id/CMB6_cmbInactividad"
+        android:layout_width="200dp"
+        android:layout_height="44dp"
+        app:layout_constraintBottom_toBottomOf="@+id/CMB6txtInactividad"
+        app:layout_constraintStart_toStartOf="@+id/CMB6_cmbBloodOxygen"
+        app:layout_constraintTop_toTopOf="@+id/CMB6txtInactividad"
+        app:strokeColor="@color/black"
+        app:strokeWidth="6dp" />
+
+    <!--    status-->
+    <TextView
+        android:id="@+id/CMB6_txtStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Status"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/CSCROLLER_ID"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/CSCROLLER_ID" />
+
+    <!--    log-->
+    <ScrollView
+        android:id="@+id/CSCROLLER_ID"
+        android:layout_width="1018dp"
+        android:layout_height="156dp"
+        android:layout_marginBottom="4dp"
+        android:fillViewport="true"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:id="@+id/CMB6_txtResult"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@android:drawable/editbox_background"
+            android:text="Result info"
+            app:layout_constraintTop_toBottomOf="@+id/CbtMB6_SETTINGS" />
+    </ScrollView>
+
+    <!--    button emparejar-->
+    <Button
+        android:id="@+id/CMB6_btEmparejar"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="80dp"
+        android:onClick="onClick"
+        android:text="EMPAREJAR\nDISPOSITIVO"
+        android:background="@color/blueLogin"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/CMB6txtLanguage" />
+
+    <!--button cofigurar-->
+    <Button
+        android:id="@+id/CMB6_btConfigurar"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="onClick"
+        android:text="CONFIGURAR\nDISPOSITIVO"
+        android:background="@color/blueLogin"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/CSCROLLER_ID"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!--button clear data-->
+    <Button
+        android:id="@+id/CMB6_btClearData"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="40dp"
+        android:onClick="onClick"
+        android:text="LIMPIAR\nDATOS"
+        android:background="@color/blueLogin"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/CMB6_btConfigurar"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!--circulo de proceso-->
+    <ProgressBar
+        android:id="@+id/CMB6_ProgressBar"
+        android:layout_width="182dp"
+        android:layout_height="193dp"
+        android:indeterminateTint="@color/recurrente"
+        android:progressBackgroundTint="@color/recurrente"
+        android:progressTint="@color/recurrente"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    texto con el circulo de proceso-->
+    <TextView
+        android:id="@+id/CMB6_txtProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="..."
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/CMB6_ProgressBar"
+        app:layout_constraintEnd_toEndOf="@+id/CMB6_ProgressBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/CMB6_ProgressBar"
+        app:layout_constraintTop_toTopOf="@+id/CMB6_ProgressBar" />
+
+    <!--    rallas para limitar limite inferior de la pantalla-->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="-----------------"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!--    atras-->
+    <ImageView
+        android:id="@+id/CMB6_imfAtras"
+        android:layout_width="95dp"
+        android:layout_height="94dp"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="@+id/CSCROLLER_ID"
+        app:layout_constraintEnd_toStartOf="@+id/CSCROLLER_ID"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/fatras" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

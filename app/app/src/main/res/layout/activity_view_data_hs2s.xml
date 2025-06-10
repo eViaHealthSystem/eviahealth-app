@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_base_logo"
+    android:visibility="visible"
+    tools:context=".ui.ensayo.bascula.hs2s.view_dataHS2S">
+
+    <!--    Text Titulo-->
+    <TextView
+        android:id="@+id/HS2S_txtTitulo_pul"
+        android:layout_width="700dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="110dp"
+        android:fontFamily="@font/questrial"
+        android:singleLine="false"
+        android:text="Los datos obtenidos de su báscula son: "
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    Button Reintentar-->
+    <Button
+        android:id="@+id/HS2S_btderecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/boton_base"
+        android:enabled="false"
+        android:fontFamily="@font/questrial"
+        android:onClick="onClick"
+        android:text="Continuar"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!--    Button Saltar/Continuar-->
+    <Button
+        android:id="@+id/HS2S_btizquierda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/boton_base"
+        android:enabled="false"
+        android:fontFamily="@font/questrial"
+        android:onClick="onClick"
+        android:text="Reintentar"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--Texto bateria baja HS2S-->
+    <TextView
+        android:id="@+id/HS2S_txtbateria"
+        android:layout_width="295dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/britanic"
+        android:maxLines="2"
+        android:minLines="2"
+        android:singleLine="false"
+        android:text="Batería baja, se deben cambiar las baterías."
+        android:textColor="@color/colorAccent"
+        android:textSize="14sp"
+        android:visibility="visible"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="@+id/HS2S_igbateria"
+        app:layout_constraintStart_toStartOf="@+id/HS2S_igbateria"
+        app:layout_constraintTop_toBottomOf="@+id/HS2S_igbateria" />
+
+    <!--    Imagen HS2S-->
+    <ImageView
+        android:id="@+id/HS2S_imageView13"
+        android:layout_width="295dp"
+        android:layout_height="326dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/HS2S_txtTitulo_pul"
+        app:layout_constraintTop_toTopOf="@+id/HS2S_txtTitulo_pul"
+        app:srcCompat="@drawable/hs2s" />
+
+    <!--    Imagen Batería-->
+    <ImageView
+        android:id="@+id/HS2S_igbateria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/bateria_baja"
+        app:layout_constraintEnd_toEndOf="@+id/HS2S_imageView13"
+        app:layout_constraintStart_toStartOf="@+id/HS2S_imageView13"
+        app:layout_constraintTop_toBottomOf="@+id/HS2S_imageView13" />
+
+    <!--    Button Audio-->
+    <ImageButton
+        android:id="@+id/imageButtonAudio_hs2s"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/custom_imagen_button"
+        android:onClick="onClick"
+        android:padding="8dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96"
+        app:srcCompat="@drawable/audio_on" />
+
+<!--    Peso-->
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/soleilbold"
+        android:text="Peso"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HS2S_txtTitulo_pul" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/soleil_light"
+        android:text="kg"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/hs2s_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:fontFamily="@font/soleilbold"
+        android:text="94.9"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+<!--    IMC-->
+    <TextView
+        android:id="@+id/hs2s_label_imc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/soleilbold"
+        android:text="IMC"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/hs2s_imc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="32.1"
+        android:textSize="40sp"
+        android:fontFamily="@font/soleilbold"
+        app:layout_constraintBottom_toBottomOf="@+id/hs2s_label_imc"
+        app:layout_constraintStart_toStartOf="@+id/hs2s_weight"
+        app:layout_constraintTop_toTopOf="@+id/hs2s_label_imc" />
+
+<!--    Grasa corporal-->
+    <TextView
+        android:id="@+id/hs2s_txt_grasa_corporal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/soleil_light"
+        android:gravity="center"
+        android:text="Grasa\ncorporal"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/hs2s_label_imc"
+        app:layout_constraintTop_toBottomOf="@+id/hs2s_label_imc" />
+
+    <TextView
+        android:id="@+id/hs2s_grasa_corporal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/soleilbold"
+        android:text="30.9 %"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="@+id/hs2s_txt_grasa_corporal"
+        app:layout_constraintStart_toStartOf="@+id/hs2s_txt_grasa_corporal"
+        app:layout_constraintTop_toBottomOf="@+id/hs2s_txt_grasa_corporal" />
+
+<!--    Masa magra-->
+    <TextView
+        android:id="@+id/hs2s_txt_masa_magra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:text="Masa\nmagra"
+        android:fontFamily="@font/soleil_light"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        app:layout_constraintStart_toEndOf="@+id/hs2s_txt_grasa_corporal"
+        app:layout_constraintTop_toTopOf="@+id/hs2s_txt_grasa_corporal" />
+
+    <TextView
+        android:id="@+id/hs2s_masa_magra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/soleilbold"
+        android:text="65.5 kg"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="@+id/hs2s_txt_masa_magra"
+        app:layout_constraintStart_toStartOf="@+id/hs2s_txt_masa_magra"
+        app:layout_constraintTop_toTopOf="@+id/hs2s_grasa_corporal" />
+
+<!--    Agua corporal-->
+    <TextView
+        android:id="@+id/hs2s_txt_agua_corporal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:text="Agua\ncorporal"
+        android:fontFamily="@font/soleil_light"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        app:layout_constraintStart_toEndOf="@+id/hs2s_txt_masa_magra"
+        app:layout_constraintTop_toTopOf="@+id/hs2s_txt_masa_magra" />
+
+    <TextView
+        android:id="@+id/hs2s_agua_corporal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="50.6 %"
+        android:fontFamily="@font/soleilbold"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="@+id/hs2s_txt_agua_corporal"
+        app:layout_constraintStart_toStartOf="@+id/hs2s_txt_agua_corporal"
+        app:layout_constraintTop_toTopOf="@+id/hs2s_masa_magra" />
+
+<!--    Masa muscular-->
+    <TextView
+        android:id="@+id/hs2s_txt_masa_muscular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/soleil_light"
+        android:gravity="center"
+        android:text="Masa\nmuscular"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/hs2s_txt_masa_magra"
+        app:layout_constraintStart_toStartOf="@+id/hs2s_txt_masa_magra"
+        app:layout_constraintTop_toBottomOf="@+id/hs2s_masa_magra" />
+
+    <TextView
+        android:id="@+id/hs2s_masa_muscular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="61.5 kg"
+        android:textSize="28sp"
+        android:fontFamily="@font/soleilbold"
+        app:layout_constraintEnd_toEndOf="@+id/hs2s_txt_masa_muscular"
+        app:layout_constraintStart_toStartOf="@+id/hs2s_txt_masa_muscular"
+        app:layout_constraintTop_toBottomOf="@+id/hs2s_txt_masa_muscular" />
+
+<!--    BMR-->
+    <TextView
+        android:id="@+id/hs2s_txt_bmr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BMR"
+        android:fontFamily="@font/soleil_light"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/hs2s_txt_masa_muscular"
+        app:layout_constraintEnd_toEndOf="@+id/hs2s_txt_grasa_corporal"
+        app:layout_constraintStart_toStartOf="@+id/hs2s_txt_grasa_corporal"
+        app:layout_constraintTop_toTopOf="@+id/hs2s_txt_masa_muscular" />
+
+    <TextView
+        android:id="@+id/hs2s_bmr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/soleilbold"
+        android:text="1785"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="@+id/hs2s_txt_bmr"
+        app:layout_constraintStart_toStartOf="@+id/hs2s_txt_bmr"
+        app:layout_constraintTop_toTopOf="@+id/hs2s_masa_muscular" />
+
+<!--    TGV-->
+    <TextView
+        android:id="@+id/hs2s_txt_tgv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TGV"
+        android:fontFamily="@font/soleil_light"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/hs2s_txt_masa_muscular"
+        app:layout_constraintEnd_toEndOf="@+id/hs2s_txt_agua_corporal"
+        app:layout_constraintStart_toStartOf="@+id/hs2s_txt_agua_corporal"
+        app:layout_constraintTop_toTopOf="@+id/hs2s_txt_masa_muscular" />
+
+    <TextView
+        android:id="@+id/hs2s_tgv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/soleilbold"
+        android:text="17"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="@+id/hs2s_txt_tgv"
+        app:layout_constraintStart_toStartOf="@+id/hs2s_txt_tgv"
+        app:layout_constraintTop_toTopOf="@+id/hs2s_masa_muscular" />
+
+<!--    Masa ósea-->
+    <TextView
+        android:id="@+id/hs2s_txt_masa_osea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="60dp"
+        android:fontFamily="@font/soleil_light"
+        android:gravity="center"
+        android:text="Masa\nósea"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/hs2s_txt_agua_corporal"
+        app:layout_constraintStart_toEndOf="@+id/hs2s_txt_agua_corporal"
+        app:layout_constraintTop_toTopOf="@+id/hs2s_txt_agua_corporal" />
+
+    <TextView
+        android:id="@+id/hs2s_masa_osea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/soleilbold"
+        android:text="4.1 kg"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="@+id/hs2s_txt_masa_osea"
+        app:layout_constraintStart_toStartOf="@+id/hs2s_txt_masa_osea"
+        app:layout_constraintTop_toBottomOf="@+id/hs2s_txt_masa_osea" />
+
+<!--    CCI-->
+    <TextView
+        android:id="@+id/hs2s_txt_cci"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/soleil_light"
+        android:gravity="center"
+        android:text="CCI"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/hs2s_txt_tgv"
+        app:layout_constraintEnd_toEndOf="@+id/hs2s_txt_masa_osea"
+        app:layout_constraintStart_toStartOf="@+id/hs2s_txt_masa_osea"
+        app:layout_constraintTop_toTopOf="@+id/hs2s_txt_tgv" />
+
+    <TextView
+        android:id="@+id/hs2s_cci"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/soleilbold"
+        android:text="1941 kcal"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="@+id/hs2s_txt_cci"
+        app:layout_constraintStart_toStartOf="@+id/hs2s_txt_cci"
+        app:layout_constraintTop_toTopOf="@+id/hs2s_tgv" />
+
+    <TextView
+        android:id="@+id/hs2s_txt_hitorico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Los datos que se muestran son del día: "
+        android:fontFamily="@font/soleil_light"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/HS2S_txtTitulo_pul"
+        app:layout_constraintTop_toBottomOf="@+id/HS2S_txtTitulo_pul" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

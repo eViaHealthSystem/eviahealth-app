@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_base_logo"
+    tools:context=".ui.ensayo.bascula.clasico.get_dataClassicScale">
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:text="Introduzca el valor de peso que\nindica su báscula."
+        android:textSize="40dp"
+        app:fontFamily="@font/soleilbold"
+        app:layout_constraintEnd_toStartOf="@+id/HS2S_imageView13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/PA_txtPeso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PESO"
+        android:textSize="58dp"
+        app:fontFamily="@font/soleilbold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.58000004" />
+
+    <NumberPicker
+        android:id="@+id/scale_PesoCentenas"
+        android:layout_width="80dp"
+        android:layout_height="210dp"
+        android:selectionDividerHeight="1sp"
+        android:descendantFocusability="blocksDescendants"
+        android:scaleY="2"
+        app:layout_constraintBottom_toBottomOf="@+id/PA_txtPeso"
+        app:layout_constraintEnd_toStartOf="@+id/scale_PesoDecenas"
+        app:layout_constraintTop_toTopOf="@+id/PA_txtPeso"></NumberPicker>
+
+    <NumberPicker
+        android:id="@+id/scale_PesoDecenas"
+        android:layout_width="80dp"
+        android:layout_height="210dp"
+        android:selectionDividerHeight="1sp"
+        android:descendantFocusability="blocksDescendants"
+        android:scaleY="2"
+        app:layout_constraintEnd_toStartOf="@+id/scale_PesoUnidades"
+        app:layout_constraintTop_toTopOf="@+id/scale_PesoCentenas"></NumberPicker>
+
+    <NumberPicker
+        android:id="@+id/scale_PesoUnidades"
+        android:layout_width="80dp"
+        android:layout_height="210dp"
+        android:selectionDividerHeight="1sp"
+        android:descendantFocusability="blocksDescendants"
+        android:scaleY="2"
+        app:layout_constraintEnd_toStartOf="@+id/PUNTO"
+        app:layout_constraintTop_toTopOf="@+id/scale_PesoDecenas"></NumberPicker>
+
+    <NumberPicker
+        android:id="@+id/PUNTO"
+        android:layout_width="30dp"
+        android:layout_height="210dp"
+        android:selectionDividerHeight="0sp"
+        android:scaleY="2"
+        app:layout_constraintEnd_toStartOf="@+id/scale_PesoDecimal"
+        app:layout_constraintTop_toTopOf="@+id/scale_PesoUnidades"></NumberPicker>
+
+    <NumberPicker
+        android:id="@+id/scale_PesoDecimal"
+        android:layout_width="80dp"
+        android:layout_height="210dp"
+        android:selectionDividerHeight="1sp"
+        android:descendantFocusability="blocksDescendants"
+        android:scaleY="2"
+        app:layout_constraintEnd_toEndOf="@+id/textView14"
+        app:layout_constraintTop_toTopOf="@+id/PUNTO"></NumberPicker>
+
+    <!--    Imagen báscula-->
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/soleil_light"
+        android:text="kg"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/PA_txtPeso"
+        app:layout_constraintTop_toBottomOf="@+id/PA_txtPeso" />
+
+    <!--    Imagen HS2S-->
+    <ImageView
+        android:id="@+id/HS2S_imageView13"
+        android:layout_width="295dp"
+        android:layout_height="326dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hs2s" />
+
+    <!--    Button Saltar/Continuar-->
+    <Button
+        android:id="@+id/scale_btderecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/boton_base"
+        android:fontFamily="@font/soleil_regular"
+        android:onClick="onClick"
+        android:text="Continuar"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!--    Button Audio-->
+    <ImageButton
+        android:id="@+id/imageButtonAudio_scale"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/custom_imagen_button"
+        android:onClick="onClick"
+        android:padding="8dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96"
+        app:srcCompat="@drawable/audio_on" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="black">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorAzul">#0A6DFC</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gris">#FBA010</color>
+    <color name="recurrente">#2e346c</color>
+    <color name="blueLogin">#078fca</color>
+
+    <color name="azulbutton">#3e629e</color>
+    <color name="grismarco">#c0c0c0</color>
+    <color name="griscancelar">#ffb3b3b3</color>
+    <color name="red">#ff0000</color>
+    <color name="rojizo">#e54341</color>
+    <color name="verdoso">#61b896</color>
+    <color name="transparente">#00FFFFFF</color>
+
+    <color name="light_blue">#87CEFA</color>
+</resources>

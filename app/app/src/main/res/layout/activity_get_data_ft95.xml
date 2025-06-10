@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:id="@+id/idlayout_ft95"
+    android:orientation="horizontal"
+    android:background="@drawable/fondo_ft95"
+    tools:context=".ui.ensayo.termometro.ft95.get_dataFT95">
+
+    <!--    Circulo de progreso-->
+    <ProgressBar
+        android:id="@+id/circulodescarga"
+        android:layout_width="242dp"
+        android:layout_height="214dp"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/griscancelar"
+        android:progressBackgroundTint="@color/griscancelar"
+        android:progressTint="@color/griscancelar"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    Text Status-->
+    <TextView
+        android:id="@+id/txtStatus_pul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="@font/questrial"
+        android:text="Conectando"
+        android:textColor="#C5C5C5"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--    Button Audio-->
+    <ImageButton
+        android:id="@+id/imageButtonAudio"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/custom_imagen_button"
+        android:onClick="onClick"
+        android:padding="8dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96"
+        app:srcCompat="@drawable/audio_on" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

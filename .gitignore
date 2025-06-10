@@ -46,6 +46,7 @@ app/.kaptStubs/
 app/obj/
 
 #Mis módulos extra
+*.aar
 app/AliveCorKitLite/build/
 app/AliveCorKitLit/*.aar
 app/mobilertc/build/

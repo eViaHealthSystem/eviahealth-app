@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.eviahealth.eviahealth">
+    <!-- Request legacy Bluetooth permissions on older devices. -->
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="false"
+        android:smallScreens="false"
+        android:xlargeScreens="true" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_SCAN"
+        android:usesPermissionFlags="neverForLocation" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_USER_DICTIONARY" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+
+    <application
+        android:name=".Aplicacion"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.inicio.Consentimiento"
+            android:exported="false" />
+        <activity
+            android:name=".ui.admin.tecnico.DobleAutenticacion"
+            android:exported="false" />
+        <activity
+            android:name=".ui.admin.tecnico.LoginTecnico"
+            android:exported="false"
+            android:theme="@style/Theme.LoginTecnico" />
+        <activity
+            android:name=".ui.ensayo.ecg.MyBrowsable"
+            android:exported="true"
+            tools:ignore="AppLinkUrlError">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="https" />
+                <data android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.config.ecg.config_Kardia6L"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.ecg.get_data2Kardia6L"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.ecg.view_failKardia6L"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.ecg.view_dataKardia6L"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.ecg.get_dataKardia6L"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.bascula.gbs2012b.view_failGBS2012B"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.bascula.gbs2012b.view_dataGBS2012B"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.bascula.gbs2012b.get_dataGBS2012B"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.MonitorPulmonar.view_data2LUNG"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.termometro.ft95.view_failFT95"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.termometro.nt13b.view_failNT13B"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.pulsera.mambo6.view_failMAMBO6"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.tensiometro.bm57.view_failBM57"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.tensiometro.bc87.view_failBC87"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.tensiometro.bc85.view_failBC85"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.tensiometro.bc54.view_failBC54"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.bascula.clasico.view_dataClassicScale"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.bascula.clasico.get_dataClassicScale"
+            android:exported="false" />
+        <activity
+            android:name=".ui.inicio.PacienteEnsayo"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.bascula.bf600.view_failBF600"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.bascula.bf600.view_dataBF600"
+            android:exported="false" />
+        <activity
+            android:name=".ui.config.bf600.config_BF600"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.bascula.bf600.get_dataBF600"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.oximetro.po60.view_failPO60"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.oximetro.po3m.view_failPO3M"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.tensiometro.bp3l.view_failBP3L"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.bascula.hs2s.view_failHS2S"
+            android:exported="false" />
+        <activity
+            android:name=".ui.admin.fichapaciente.CaracteristicasPaciente"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.MonitorPulmonar.view_failLUNG"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.MonitorPulmonar.view_dataLUNG"
+            android:exported="false" />
+        <activity
+            android:name=".ui.config.lung.config_LUNG"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.MonitorPulmonar.get_dataLUNG"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.termometro.ft95.view_dataFT95"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.termometro.ft95.get_dataFT95"
+            android:exported="false" />
+        <activity
+            android:name=".ui.admin.fichapaciente.CameraFoto"
+            android:exported="false" />
+        <activity
+            android:name=".ui.config.ihealth.config_HS2S"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.bascula.hs2s.view_dataHS2S"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.bascula.hs2s.get_dataHS2S"
+            android:exported="false" />
+        <activity
+            android:name=".ui.admin.tecnico.LoginSetting"
+            android:exported="false" />
+        <activity
+            android:name=".ui.formacion.ViewPdfWeb"
+            android:exported="false" />
+        <activity
+            android:name=".ui.formacion.VideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.formacion.ViewPDF"
+            android:exported="false" />
+        <activity
+            android:name=".ui.formacion.EducationTraining"
+            android:exported="false" />
+        <activity
+            android:name=".ui.formacion.Navegador"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.termometro.nt13b.view_dataNT13B"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.termometro.nt13b.get_dataNT13B"
+            android:exported="false" />
+        <activity
+            android:name=".ui.meeting.WaitMeetingPatient"
+            android:exported="false" />
+        <activity
+            android:name=".ui.meeting.ConfirmMeetingPatient"
+            android:exported="false" />
+        <activity
+            android:name=".ui.meeting.JoinMeetingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.admin.tecnico.InsertIMEI"
+            android:exported="false" />
+        <activity
+            android:name=".ui.admin.tecnico.LoginOption"
+            android:exported="false" />
+        <activity
+            android:name=".ui.config.mb6.config_Mambo6"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.pulsera.mambo6.view_dataMAMBO6"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.pulsera.mambo6.get_dataMAMBO6"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.tensiometro.bm57.view_dataBM57"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.tensiometro.bm57.get_dataBM57"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.tensiometro.bc87.view_dataBC87"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.tensiometro.bc87.get_dataBC87"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.tensiometro.bc85.view_dataBC85"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.tensiometro.bc85.get_dataBC85"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.tensiometro.bc54.view_dataBC54"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.tensiometro.bc54.get_dataBC54"
+            android:exported="false" />
+        <activity
+            android:name=".ui.admin.fichapaciente.DispositivosPaciente"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.oximetro.po60.view_dataPO60"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ensayo.oximetro.po60.get_dataPO60"
+            android:exported="false" />
+        <activity
+            android:name=".ui.admin.tecnico.QRReader"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.ensayo.oximetro.po3m.view_dataPO3M"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.ensayo.oximetro.po3m.get_dataPO3M"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.ensayo.tensiometro.bp3l.view_dataBP3L"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.ensayo.tensiometro.bp3l.get_dataBP3L"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.ensayo.pulsera.am4.view_dataAM4"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.inicio.Inicio"
+            android:exported="true"
+            android:label="EVIAHEALTH"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.ensayo.pulsera.am4.get_dataAM4"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.ensayo.termometro.clasico.Termometro"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.ensayo.peakflow.PeakFlow"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.ensayo.encuesta.Encuesta"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.ensayo.encuesta.EncuestaCat"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.inicio.SubirDatos"
+            android:screenOrientation="landscape" />
+
+        <service
+            android:name=".bluetooth.BluetoothLeService"
+            android:enabled="true" />
+        <service android:name="com.telit.terminalio.TIOService" />
+    </application>
+
+</manifest>

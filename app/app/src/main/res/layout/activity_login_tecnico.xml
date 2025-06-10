@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/fondo_base_logo"
+    tools:context=".ui.admin.tecnico.LoginTecnico">
+
+    <ProgressBar
+        android:id="@+id/progressBarTecnico"
+        style="@android:style/Widget.ProgressBar.Large"
+        android:layout_width="215dp"
+        android:layout_height="180dp"
+        android:visibility="gone"
+        android:indeterminateTint="@color/recurrente"
+        android:progressBackgroundTint="@color/recurrente"
+        android:progressTint="@color/recurrente"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="709dp"
+        android:layout_height="253dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.41000003">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="91dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-270dp"
+            android:layout_marginTop="-42dp"
+            app:srcCompat="@drawable/login" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtUsername"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="664dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="70dp"
+            android:fontFamily="@font/questrial"
+            android:hint="Username"
+            android:textColorHint="#A7A7A7"
+            app:boxStrokeColor="#EAEAEE">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editUser"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:fontFamily="@font/questrial"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="#5B5B5B"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtPassword"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="664dp"
+            android:layout_height="63dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="70dp"
+            android:fontFamily="@font/questrial"
+            android:hint="Password"
+            android:textColorHint="#A7A7A7"
+            app:boxStrokeColor="#EAEAEE"
+            app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editPassword"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:fontFamily="@font/questrial"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textColor="#5B5B5B"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonLogin"
+        style="@style/btnBordesRedondos"
+        android:layout_width="664dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="576dp"
+        android:layout_marginEnd="576dp"
+        android:background="@drawable/selector_button"
+        android:text="Login"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.151" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="95dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="-40dp"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:srcCompat="@drawable/tecnico" />
+
+    <!--    atras-->
+    <ImageView
+        android:id="@+id/tecnico_imgAtras"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="40dp"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/fatras" />
+
+    <TextView
+        android:id="@+id/txtStatus_tecnico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Usuario o contraseña incorrectos"
+        android:textColor="@color/rojizo"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLogin"
+        app:layout_constraintEnd_toEndOf="@+id/buttonLogin"
+        app:layout_constraintStart_toStartOf="@+id/buttonLogin"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

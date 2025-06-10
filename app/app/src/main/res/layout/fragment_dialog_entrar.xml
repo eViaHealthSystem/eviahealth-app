@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="820dp"
+    android:layout_height="560dp"
+    android:background="@color/transparente"
+    android:id="@+id/FrameEnterMeeting"
+    tools:context=".ui.meeting.FrameDialogEntrar">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--    Marco-->
+        <ImageView
+            android:id="@+id/marco"
+            android:layout_width="660dp"
+            android:layout_height="300dp"
+            android:background="@drawable/rounded_border"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--    Imagen doctor-->
+        <ImageView
+            android:id="@+id/imgdoctor"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="-55dp"
+            android:layout_marginEnd="-55dp"
+            app:layout_constraintEnd_toStartOf="@+id/marco"
+            app:layout_constraintTop_toTopOf="@+id/marco"
+            app:srcCompat="@drawable/doctor2" />
+
+        <!--    Imagen zomm-->
+        <ImageView
+            android:id="@+id/imgzoom"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/marco"
+            app:layout_constraintTop_toTopOf="@+id/marco"
+            app:srcCompat="@drawable/zoom" />
+
+        <!--    Button Entrar -->
+        <Button
+            android:id="@+id/buttonEntrar"
+            android:layout_width="183dp"
+            android:layout_height="49dp"
+            android:layout_marginBottom="40dp"
+            android:background="@color/verdoso"
+            android:backgroundTint="@color/verdoso"
+            android:text="ENTRAR"
+            android:fontFamily="@font/questrial"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/marco"
+            app:layout_constraintEnd_toEndOf="@+id/marco"
+            app:layout_constraintStart_toStartOf="@+id/marco" />
+
+        <!--    Text Titulo-->
+        <TextView
+            android:id="@+id/textTitulo"
+            android:layout_width="496dp"
+            android:layout_height="77dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="40dp"
+            android:text="Ya puede acceder a su videollamada planificada"
+            android:fontFamily="@font/britanic"
+            android:textSize="28sp"
+            app:layout_constraintStart_toStartOf="@+id/marco"
+            app:layout_constraintTop_toTopOf="@+id/marco" />
+
+        <!--    Texto Fecha Meeting-->
+        <TextView
+            android:id="@+id/textFechaMeeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/questrial"
+            android:text="2023-05-30 12:00"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toTopOf="@+id/buttonEntrar"
+            app:layout_constraintEnd_toEndOf="@+id/marco"
+            app:layout_constraintStart_toStartOf="@+id/marco"
+            app:layout_constraintTop_toBottomOf="@+id/textTitulo" />
+
+        <ProgressBar
+            android:id="@+id/progressWait"
+            android:layout_width="263dp"
+            android:layout_height="234dp"
+            android:indeterminateTint="@color/recurrente"
+            android:progressBackgroundTint="@color/recurrente"
+            android:progressTint="@color/recurrente"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/marco"
+            app:layout_constraintEnd_toEndOf="@+id/marco"
+            app:layout_constraintStart_toStartOf="@+id/marco"
+            app:layout_constraintTop_toTopOf="@+id/marco" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

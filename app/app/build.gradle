@@ -1,0 +1,94 @@
+plugins {
+    alias(libs.plugins.androidApplication)
+}
+
+android {
+    namespace 'com.eviahealth.eviahealth'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.eviahealth.eviahealth"
+        minSdk 30
+        targetSdk 35
+        versionCode 184
+        versionName "1.0.184"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters "x86_64","arm64-v8a"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['jniLibs','libs']
+        }
+    }
+
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+        buildConfig = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    implementation project(':mobilertc')
+    implementation libs.conscrypt.android
+    implementation libs.play.services.auth
+    implementation libs.play.services.vision
+    implementation libs.camera.core
+    implementation libs.camera.camera2
+    implementation libs.camera.lifecycle
+    implementation libs.camera.view
+    implementation libs.jjwt
+    implementation project(':terminalio')
+    implementation project(':AliveCorKitLite')
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+
+    implementation "com.github.bosphere.android-filelogger:filelogger:1.0.7"
+
+    implementation 'com.squareup.retrofit2:retrofit:2.11.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.11.0'    // Para JSON
+    implementation 'com.squareup.retrofit2:converter-scalars:2.11.0'  // Para Scalars
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.11.0'
+
+    // OkHttp
+    implementation libs.okhttp
+    implementation libs.logging.interceptor
+    // Crypto
+    implementation 'androidx.security:security-crypto:1.1.0-alpha06'
+//    implementation 'org.conscrypt:conscrypt-android:2.5.2'
+
+
+    debugImplementation "androidx.fragment:fragment-testing:1.8.6"
+    compileOnly "com.google.dagger:dagger-android-support:2.52"
+
+//    annotationProcessor "androidx.room:room-compiler:2.6.1"
+//    annotationProcessor 'com.google.dagger:dagger-compiler:2.52'
+//    annotationProcessor 'androidx.room:room-compiler:2.6.1'
+}

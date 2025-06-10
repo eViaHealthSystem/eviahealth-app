@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pulseralayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="horizontal"
+    android:background="@drawable/fondo_base_logo"
+    android:visibility="visible"
+    android:keepScreenOn="true"
+    tools:context=".ui.ensayo.pulsera.am4.get_dataAM4">
+
+    <ProgressBar
+        android:id="@+id/circulodescarga"
+        android:layout_width="242dp"
+        android:layout_height="214dp"
+        android:indeterminateTint="@color/recurrente"
+        android:progressBackgroundTint="@color/recurrente"
+        android:progressTint="@color/recurrente"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:fontFamily="@font/questrial"
+        android:gravity="center_horizontal"
+        android:text="Acerque la pulsera y espere unos instantes a que se descarguen sus datos de actividad."
+        android:textSize="50sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView14" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="295dp"
+        android:layout_height="326dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="148dp"
+        android:src="@drawable/pulsera_ihealth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtStatus_pul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="@font/questrial"
+        android:text="Conectando"
+        android:textColor="#C5C5C5"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--    Button Audio-->
+    <ImageButton
+        android:id="@+id/imageButtonAudio"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/custom_imagen_button"
+        android:onClick="onClick"
+        android:padding="8dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96"
+        app:srcCompat="@drawable/audio_on" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

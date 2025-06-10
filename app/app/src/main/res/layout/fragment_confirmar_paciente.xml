@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="820dp"
+    android:layout_height="560dp"
+    android:background="@color/transparente"
+    android:id="@+id/FrameConfimarPaciente"
+    tools:context=".ui.meeting.FrameDialogConfirmar">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--    Marco-->
+        <ImageView
+            android:id="@+id/marco"
+            android:layout_width="600dp"
+            android:layout_height="440dp"
+            android:background="@drawable/rounded_border"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--    Imagen doctor-->
+        <ImageView
+            android:id="@+id/imgdoctor"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="-55dp"
+            android:layout_marginEnd="-55dp"
+            app:layout_constraintEnd_toStartOf="@+id/marco"
+            app:layout_constraintTop_toTopOf="@+id/marco"
+            app:srcCompat="@drawable/doctor2" />
+
+        <!--    Imagen zomm-->
+
+        <!--    Button Aceptar-->
+        <Button
+            android:id="@+id/buttonAceptar"
+            android:layout_width="183dp"
+            android:layout_height="49dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="40dp"
+            android:background="@color/verdoso"
+            app:backgroundTint="@color/verdoso"
+            android:fontFamily="@font/soleil_regular"
+            android:text="ACEPTAR"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/marco"
+            app:layout_constraintEnd_toEndOf="@+id/marco" />
+
+        <!--    Button Rechazar-->
+        <Button
+            android:id="@+id/buttonRechazar"
+            android:layout_width="183dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginBottom="40dp"
+            android:background="@color/rojizo"
+            app:backgroundTint="@color/rojizo"
+            android:fontFamily="@font/soleil_regular"
+            android:text="RECHAZAR"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/marco"
+            app:layout_constraintStart_toStartOf="@+id/marco" />
+
+        <!--    Text Titulo-->
+        <TextView
+            android:id="@+id/textTitulo"
+            android:layout_width="496dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/soleil_light"
+            android:onClick="onClick"
+            android:text="Ha indicado que el identificador de paciente es"
+            android:textSize="28sp"
+            app:layout_constraintStart_toStartOf="@+id/marco"
+            app:layout_constraintTop_toTopOf="@+id/marco" />
+
+        <!--    Texto Fecha Meeting-->
+        <TextView
+            android:id="@+id/textIdPaciente"
+            android:layout_width="496dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/soleilbold"
+            android:onClick="onClick"
+            android:text="88888888"
+            android:textSize="28sp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@+id/textTitulo"
+            app:layout_constraintTop_toBottomOf="@+id/textTitulo" />
+
+        <TextView
+            android:id="@+id/textTitulo2"
+            android:layout_width="496dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/soleil_light"
+            android:onClick="onClick"
+            android:text="que corresponde con"
+            android:textSize="28sp"
+            app:layout_constraintStart_toStartOf="@+id/textTitulo"
+            app:layout_constraintTop_toBottomOf="@+id/textIdPaciente" />
+
+        <TextView
+            android:id="@+id/textNombre"
+            android:layout_width="496dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/soleilbold"
+            android:gravity="center"
+            android:text="ANTONIO MANUEL\nLOPEZ FERNANDEZ"
+            android:textSize="28sp"
+            app:layout_constraintStart_toStartOf="@+id/textTitulo"
+            app:layout_constraintTop_toBottomOf="@+id/textTitulo2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

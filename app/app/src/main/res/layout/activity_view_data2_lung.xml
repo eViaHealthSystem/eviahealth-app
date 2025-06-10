@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_base_logo"
+    tools:context=".ui.ensayo.MonitorPulmonar.view_data2LUNG">
+
+<!--    PEF-->
+    <TextView
+        android:id="@+id/txt_pef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:fontFamily="@font/soleilbold"
+        android:text="PEF"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lung_txtTitulo" />
+
+    <TextView
+        android:id="@+id/txt_uni_pef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/soleil_light"
+        android:text="litros/min"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@+id/txt_pef"
+        app:layout_constraintTop_toBottomOf="@+id/txt_pef" />
+
+    <TextView
+        android:id="@+id/lung_pef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/soleilbold"
+        android:text="421"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_uni_pef"
+        app:layout_constraintStart_toStartOf="@+id/lung_fev1"
+        app:layout_constraintTop_toTopOf="@+id/txt_pef" />
+
+<!--    FEV1-->
+    <TextView
+        android:id="@+id/txt_fev1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/soleilbold"
+        android:text="FEV1"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="@+id/txt_pef"
+        app:layout_constraintTop_toBottomOf="@+id/txt_uni_pef" />
+
+    <TextView
+        android:id="@+id/txt_uni_fev1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/soleil_light"
+        android:text="litros"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@+id/txt_fev1"
+        app:layout_constraintTop_toBottomOf="@+id/txt_fev1" />
+
+    <TextView
+        android:id="@+id/lung_fev1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/soleilbold"
+        android:text="3.24"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_fev1"
+        app:layout_constraintStart_toStartOf="@+id/lung_fev6"
+        app:layout_constraintTop_toTopOf="@+id/txt_fev1" />
+
+    <!--    FEV6-->
+    <TextView
+        android:id="@+id/txt_fev6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/soleilbold"
+        android:text="FEV6"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="@+id/txt_fev1"
+        app:layout_constraintTop_toBottomOf="@+id/txt_uni_fev1" />
+
+    <TextView
+        android:id="@+id/txt_uni_fev6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/soleil_light"
+        android:text="litros"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@+id/txt_fev6"
+        app:layout_constraintTop_toBottomOf="@+id/txt_fev6" />
+
+    <TextView
+        android:id="@+id/lung_fev6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/soleilbold"
+        android:text="2.46"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_uni_fev6"
+        app:layout_constraintStart_toStartOf="@+id/lung_fev1fev6"
+        app:layout_constraintTop_toTopOf="@+id/txt_fev6" />
+
+    <!--    FEV1/FEV6-->
+    <TextView
+        android:id="@+id/txt_ratio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/soleilbold"
+        android:text="FEV1/FEV6"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="@+id/txt_pef"
+        app:layout_constraintTop_toBottomOf="@+id/txt_uni_fev6" />
+
+    <TextView
+        android:id="@+id/txt_uni_ratio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/soleil_light"
+        android:text="ratio"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@+id/txt_ratio"
+        app:layout_constraintTop_toBottomOf="@+id/txt_ratio" />
+
+    <TextView
+        android:id="@+id/lung_fev1fev6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:fontFamily="@font/soleilbold"
+        android:text="0.75"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_ratio"
+        app:layout_constraintStart_toEndOf="@+id/txt_ratio"
+        app:layout_constraintTop_toTopOf="@+id/txt_ratio" />
+
+    <TextView
+        android:id="@+id/lung_fail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/soleilbold"
+        android:gravity="center"
+        android:text="Medida incorrecta\n\nPor favor repita la maniobra\n\nINTENTO 1 de 3"
+        android:textSize="40sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/imgOximetro"
+        app:layout_constraintEnd_toStartOf="@+id/imgOximetro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgOximetro" />
+
+    <TextView
+        android:id="@+id/lung_txtTitulo"
+        android:layout_width="700dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="130dp"
+        android:fontFamily="@font/questrial"
+        android:singleLine="false"
+        android:text="Resultados obtenidos de su medición:"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/lung_btReintentar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/boton_base"
+        android:fontFamily="@font/questrial"
+        android:onClick="onClick"
+        android:text="Reintentar"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/lung_btContinuar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/boton_base"
+        android:fontFamily="@font/questrial"
+        android:onClick="onClick"
+        android:text="Continuar"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgOximetro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/lung"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    Button Audio-->
+    <ImageButton
+        android:id="@+id/imageButtonAudio"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/custom_imagen_button"
+        android:onClick="onClick"
+        android:padding="8dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96"
+        app:srcCompat="@drawable/audio_on" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

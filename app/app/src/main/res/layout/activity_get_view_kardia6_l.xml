@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_base_logo"
+    tools:context=".ui.ensayo.ecg.view_dataKardia6L">
+
+    <!--Título-->
+    <TextView
+        android:id="@+id/k6l_txtTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="130dp"
+        android:fontFamily="@font/soleilbold"
+        android:singleLine="false"
+        android:text="Resultado obtenido en su ECG:"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--    BPM-->
+    <TextView
+        android:id="@+id/lb_bpm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/soleilbold"
+        android:text="Frecuencia cardíaca"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/k6l_txtTitulo" />
+
+    <TextView
+        android:id="@+id/txt_uni_pef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/soleil_light"
+        android:text="BPM"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@+id/lb_bpm"
+        app:layout_constraintTop_toBottomOf="@+id/lb_bpm" />
+
+    <TextView
+        android:id="@+id/txt_bpm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:fontFamily="@font/soleilbold"
+        android:text="80"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_uni_pef"
+        app:layout_constraintStart_toEndOf="@+id/lb_bpm"
+        app:layout_constraintTop_toTopOf="@+id/lb_bpm" />
+
+    <!--    Determinación de Kardia-->
+    <TextView
+        android:id="@+id/txt_fev1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/soleilbold"
+        android:text="Resumen"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="@+id/lb_bpm"
+        app:layout_constraintTop_toBottomOf="@+id/txt_uni_pef" />
+
+    <TextView
+        android:id="@+id/txt_result"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="-12dp"
+        android:fontFamily="@font/soleil_regular"
+        android:text="resumen + detalles del ecg"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/img_k6l"
+        app:layout_constraintStart_toStartOf="@+id/txt_fev1"
+        app:layout_constraintTop_toBottomOf="@+id/txt_fev1" />
+
+
+    <TextView
+        android:id="@+id/txt_mensage"
+        android:layout_width="1000dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/soleil_light"
+        android:text="EVIAHEALTH APP no puede detectar signos de un ataque cardíaco. Si cree que está sufriendo una emergencia médica, llame a los servicios de urgencia. No cambie su medicación sin consultar con su médico."
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonAudio"
+        app:layout_constraintEnd_toEndOf="@+id/img_k6l"
+        app:layout_constraintStart_toStartOf="@+id/lb_bpm" />
+
+    <Button
+        android:id="@+id/k6l_btReintentar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/boton_base"
+        android:fontFamily="@font/questrial"
+        android:onClick="onClick"
+        android:text="Reintentar"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/k6l_btContinuar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/boton_base"
+        android:fontFamily="@font/questrial"
+        android:onClick="onClick"
+        android:text="Continuar"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_k6l"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/k6l"
+        app:layout_constraintBottom_toTopOf="@+id/txt_mensage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/k6l_txtTitulo" />
+
+    <!--    Button Audio-->
+    <ImageButton
+        android:id="@+id/imageButtonAudio"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/custom_imagen_button"
+        android:onClick="onClick"
+        android:padding="8dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96"
+        app:srcCompat="@drawable/audio_on" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

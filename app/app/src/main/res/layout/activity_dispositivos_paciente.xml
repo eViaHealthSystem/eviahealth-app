@@ -1,0 +1,1434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Pantalla"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_base"
+    android:orientation="horizontal"
+    tools:context=".ui.admin.fichapaciente.DispositivosPaciente">
+
+    <ProgressBar
+
+        android:id="@+id/cdescarga_paciente"
+        android:layout_width="138dp"
+        android:layout_height="134dp"
+        android:indeterminateTint="@color/recurrente"
+        android:progressBackgroundTint="@color/recurrente"
+        android:progressTint="@color/recurrente"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.561" />
+
+    <!--- Imagen paciente FOTO -->
+    <ImageView
+        android:id="@+id/imagePaciente"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="30dp"
+        android:onClick="onClick"
+        android:src="@drawable/icono_paciente"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--- Texto idPaciente -->
+    <EditText
+        android:id="@+id/activity_fichapaciente_text_idpaciente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="16dp"
+        android:editable="false"
+        android:fontFamily="@font/britanic"
+        android:text="00000000"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imagePaciente"
+        app:layout_constraintStart_toEndOf="@+id/imagePaciente"
+        app:layout_constraintTop_toTopOf="@+id/imagePaciente" />
+
+    <!--- Imagen editar características del paciente-->
+    <ImageView
+        android:id="@+id/pacienteCaracteristicas"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="40dp"
+        android:onClick="onClick"
+        android:src="@drawable/person_edit"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_fichapaciente_text_idpaciente"
+        app:layout_constraintStart_toEndOf="@+id/activity_fichapaciente_text_idpaciente"
+        app:layout_constraintTop_toTopOf="@+id/activity_fichapaciente_text_idpaciente" />
+
+    <!--- Imagen cambiar paciente-->
+    <ImageView
+        android:id="@+id/pacienteQR"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="40dp"
+        android:onClick="onClick"
+        android:src="@drawable/person_qr"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_fichapaciente_text_idpaciente"
+        app:layout_constraintStart_toEndOf="@+id/pacienteCaracteristicas"
+        app:layout_constraintTop_toTopOf="@+id/activity_fichapaciente_text_idpaciente" />
+
+    <!--- Imagen paciente remove-->
+    <ImageView
+        android:id="@+id/pacienteRemove"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="40dp"
+        android:onClick="onClick"
+        android:src="@drawable/person_remove"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_fichapaciente_text_idpaciente"
+        app:layout_constraintStart_toEndOf="@+id/pacienteQR"
+        app:layout_constraintTop_toTopOf="@+id/activity_fichapaciente_text_idpaciente" />
+
+    <!--- Imagen multi paciente -->
+    <ImageView
+        android:id="@+id/multipaciente"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="40dp"
+        android:onClick="onClick"
+        android:src="@drawable/multiuser_inactive"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_fichapaciente_text_idpaciente"
+        app:layout_constraintStart_toEndOf="@+id/pacienteRemove"
+        app:layout_constraintTop_toTopOf="@+id/activity_fichapaciente_text_idpaciente"/>
+
+    <!--- Texto número IME tablet -->
+    <TextView
+        android:id="@+id/numero_serie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="100dp"
+        android:text="IMEI: 000000000000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_fichapaciente_btn_salirso"
+        app:layout_constraintEnd_toStartOf="@+id/activity_fichapaciente_btn_salirso"
+        app:layout_constraintTop_toTopOf="@+id/activity_fichapaciente_btn_salirso" />
+
+    <!--- TABLA de dispositivos-->
+    <TableLayout
+        android:id="@+id/tablaizq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:divider="?android:attr/dividerHorizontal"
+        android:dividerPadding="1dp"
+        android:showDividers="middle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagePaciente">
+
+        <!--- Fila Oximetro -->
+        <TableRow
+            android:id="@+id/tbrow_oximetro"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:src="@drawable/icono_oximetro"
+                app:layout_constraintStart_toStartOf="@+id/imagePaciente"
+                app:layout_constraintTop_toBottomOf="@+id/imagePaciente" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
+                android:text="Oxímetro"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                tools:layout_editor_absoluteX="148dp"
+                tools:layout_editor_absoluteY="170dp" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/spnOXI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/britanic"
+                tools:layout_editor_absoluteX="250dp"
+                tools:layout_editor_absoluteY="173dp"
+                tools:visibility="visible" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- Calendario -->
+            <Button
+                android:id="@+id/btnCalendarOximetro"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/calendar_w7"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- Lupa -->
+            <Button
+                android:id="@+id/btnScanOximetro"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/lupa3"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- BLE -->
+            <Button
+                android:id="@+id/btnVincularOxi"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:background="@drawable/ble"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- CONFIG -->
+            <Button
+                android:id="@+id/btnConfigOxi"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:background="@drawable/config"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+        </TableRow>
+
+        <!--- Fila Separador -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/label22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
+                android:textSize="5sp"
+                tools:layout_editor_absoluteX="148dp"
+                tools:layout_editor_absoluteY="170dp"
+                tools:visibility="invisible" />
+
+        </TableRow>
+
+        <!--- Fila Tensiometro -->
+        <TableRow
+            android:id="@+id/tbrow_tensiometro"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:src="@drawable/icono_tensiometro"
+                tools:layout_editor_absoluteX="108dp"
+                tools:layout_editor_absoluteY="210dp" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/label2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
+                android:text="Tensiómetro"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                tools:layout_editor_absoluteX="132dp"
+                tools:layout_editor_absoluteY="285dp" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/spnTEN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/britanic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.340"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.352" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- Calendario -->
+            <Button
+                android:id="@+id/btnCalendarTensiometro"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/calendar_week"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--- Lupa -->
+            <Button
+                android:id="@+id/btnScanTensiometro"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/lupa3"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- BLE -->
+            <Button
+                android:id="@+id/btnVincularTen"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:background="@drawable/ble"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- CONFIG -->
+            <Button
+                android:id="@+id/btnConfigTen"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:background="@drawable/config"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+        </TableRow>
+
+        <!--- Fila Separador -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/label23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
+                android:textSize="5sp"
+                tools:layout_editor_absoluteX="148dp"
+                tools:layout_editor_absoluteY="170dp"
+                tools:visibility="invisible" />
+
+        </TableRow>
+
+        <!--- Fila Actividad -->
+        <TableRow
+            android:id="@+id/tbrow_actividad"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imageView16"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:src="@drawable/stepsleep" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/label10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
+                android:text="Actividad"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                tools:layout_editor_absoluteX="132dp"
+                tools:layout_editor_absoluteY="333dp" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/spnACT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/britanic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.340"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.441" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- Calendario -->
+            <Button
+                android:id="@+id/btnCalendarActividad"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/calendar_week"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- Lupa -->
+            <Button
+                android:id="@+id/btnScanActividad"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/lupa3"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- BLE -->
+            <Button
+                android:id="@+id/btnVincularAct"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:background="@drawable/ble"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- CONFIG -->
+            <Button
+                android:id="@+id/btnConfigAct"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:background="@drawable/config"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+        </TableRow>
+
+        <!--- Fila Separador -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
+                android:textSize="5sp"
+                tools:layout_editor_absoluteX="148dp"
+                tools:layout_editor_absoluteY="170dp"
+                tools:visibility="invisible" />
+
+        </TableRow>
+
+        <!--- Fila Termometro -->
+        <TableRow
+            android:id="@+id/tbrow_termometro"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:src="@drawable/thermo" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/label6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
+                android:text="Termómetro"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                tools:layout_editor_absoluteX="628dp"
+                tools:layout_editor_absoluteY="160dp" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/spinnerTER"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/britanic" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- Calendario -->
+            <Button
+                android:id="@+id/btnCalendarTermometro"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/calendar_week"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- Lupa -->
+            <Button
+                android:id="@+id/btnScanTermometro"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/lupa3"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- BLE -->
+            <Button
+                android:id="@+id/btnVincularTermo"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:background="@drawable/ble"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- CONFIG -->
+            <Button
+                android:id="@+id/btnConfigTermo"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:background="@drawable/config"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+        </TableRow>
+
+        <!--- Fila Separador -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
+                android:textSize="5sp"
+                tools:layout_editor_absoluteX="148dp"
+                tools:layout_editor_absoluteY="170dp"
+                tools:visibility="invisible" />
+
+        </TableRow>
+
+        <!--- Fila Bascula -->
+        <TableRow
+            android:id="@+id/tbrow_bascula"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:src="@drawable/scaleico" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/label60"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
+                android:text="Báscula"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                tools:layout_editor_absoluteX="628dp"
+                tools:layout_editor_absoluteY="160dp" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/spinnerBAS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/britanic" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- Calendario -->
+            <Button
+                android:id="@+id/btnCalendarScale"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/calendar_week"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- Lupa -->
+            <Button
+                android:id="@+id/btnScanScale"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/lupa3"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- BLE -->
+            <Button
+                android:id="@+id/btnVincularScale"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:background="@drawable/ble"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- CONFIG -->
+            <Button
+                android:id="@+id/btnConfigScale"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:background="@drawable/config"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+        </TableRow>
+
+        <!--- Fila Separador -->
+        <TableRow
+            android:id="@+id/tbrow_separador_bascula"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
+                android:textSize="5sp"
+                tools:layout_editor_absoluteX="148dp"
+                tools:layout_editor_absoluteY="170dp"
+                tools:visibility="invisible" />
+
+        </TableRow>
+
+        <!--- Fila Monitor Pulmonar -->
+        <TableRow
+            android:id="@+id/tbrow_lung"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:src="@drawable/mp" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/label103"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
+                android:text="Monitor Pulmonar"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                tools:layout_editor_absoluteX="628dp"
+                tools:layout_editor_absoluteY="160dp" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/spinnerMONITORPULMONAR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/britanic" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- Calendario -->
+            <Button
+                android:id="@+id/btnCalendarMonitorPulmonar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/calendar_week"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- Lupa -->
+            <Button
+                android:id="@+id/btnScanMonitorPulmonar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/lupa3"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- BLE -->
+            <Button
+                android:id="@+id/btnVincularMonitorPulmonar"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:background="@drawable/ble"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- CONFIG -->
+            <Button
+                android:id="@+id/btnConfigMonitorPulmonar"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:background="@drawable/config"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+        </TableRow>
+
+        <!--- Fila Separador -->
+        <TableRow
+            android:id="@+id/tbrow_separador_lung"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
+                android:textSize="5sp"
+                tools:layout_editor_absoluteX="148dp"
+                tools:layout_editor_absoluteY="170dp"
+                tools:visibility="invisible" />
+
+        </TableRow>
+
+        <!--- Fila ECG -->
+        <TableRow
+            android:id="@+id/tbrow_ecg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:src="@drawable/icok6l" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/label303"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
+                android:text="ECG"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                tools:layout_editor_absoluteX="628dp"
+                tools:layout_editor_absoluteY="160dp" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/spinnerECG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/britanic" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- Calendario -->
+            <Button
+                android:id="@+id/btnCalendarECG"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/calendar_week"
+                android:onClick="onClick"
+                android:importantForAccessibility="no"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- Lupa -->
+            <Button
+                android:id="@+id/btnScanECG"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/lupa3"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- BLE -->
+            <Button
+                android:id="@+id/btnVinculaECG"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:background="@drawable/ble"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- CONFIG -->
+            <Button
+                android:id="@+id/btnConfigECG"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:background="@drawable/config"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+        </TableRow>
+
+        <!--- Fila Separador -->
+        <TableRow
+            android:id="@+id/tbrow_separador_ecg"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
+                android:textSize="5sp"
+                tools:layout_editor_absoluteX="148dp"
+                tools:layout_editor_absoluteY="170dp"
+                tools:visibility="invisible" />
+
+        </TableRow>
+
+        <!--- Fila PeakFlow -->
+        <TableRow
+            android:id="@+id/tbrow_peak"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|start">
+
+            <ImageView
+                android:id="@+id/imageView80"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:src="@drawable/peakflow_ico" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/label7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
+                android:text="PeakFlow"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                tools:layout_editor_absoluteX="612dp"
+                tools:layout_editor_absoluteY="204dp" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/spinnerPEAK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/britanic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.949"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.364" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- Calendario -->
+            <Button
+                android:id="@+id/btnCalendarPEAK"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/calendar_week"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- Lupa -->
+            <Button
+                android:id="@+id/btn00"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/lupa3"
+                android:onClick="onClick"
+                android:visibility="invisible"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- BLE -->
+            <Button
+                android:id="@+id/btn01"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:background="@drawable/ble"
+                android:onClick="onClick"
+                android:visibility="invisible"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- CONFIG -->
+            <Button
+                android:id="@+id/btn02"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:background="@drawable/config"
+                android:onClick="onClick"
+                android:visibility="invisible"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+        </TableRow>
+
+        <!--- Fila Separador -->
+        <TableRow
+            android:id="@+id/tbrow_separador_peak"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/label25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
+                android:textSize="5sp"
+                tools:layout_editor_absoluteX="148dp"
+                tools:layout_editor_absoluteY="170dp"
+                tools:visibility="invisible" />
+
+        </TableRow>
+
+        <!--- Fila Encuesta -->
+        <TableRow
+            android:id="@+id/tbrow_encuesta"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:src="@drawable/encuesta_ico" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/label8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
+                android:text="Encuesta"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                tools:layout_editor_absoluteX="612dp"
+                tools:layout_editor_absoluteY="254dp" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/spinnerENC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/britanic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.949"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.441" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- Calendario -->
+            <Button
+                android:id="@+id/btnCalendarENC"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/calendar_week"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- Lupa -->
+            <Button
+                android:id="@+id/btn03"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/lupa3"
+                android:onClick="onClick"
+                android:visibility="invisible"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- BLE -->
+            <Button
+                android:id="@+id/btn04"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:background="@drawable/ble"
+                android:onClick="onClick"
+                android:visibility="invisible"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- CONFIG -->
+            <Button
+                android:id="@+id/btn05"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:background="@drawable/config"
+                android:onClick="onClick"
+                android:visibility="invisible"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+        </TableRow>
+
+        <!--- Fila Separador -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/label26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
+                android:textSize="5sp"
+                tools:layout_editor_absoluteX="148dp"
+                tools:layout_editor_absoluteY="170dp"
+                tools:visibility="invisible" />
+
+        </TableRow>
+
+        <!--- Fila CAT -->
+        <TableRow
+            android:id="@+id/tbrow_cat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:src="@drawable/cat_ico" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/label9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
+                android:text="CAT"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                tools:layout_editor_absoluteX="605dp"
+                tools:layout_editor_absoluteY="303dp" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/spinnerCAT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/britanic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.949"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.536" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- Calendario -->
+            <Button
+                android:id="@+id/btnCalendarCAT"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/calendar_week"
+                android:onClick="onClick"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- Lupa -->
+            <Button
+                android:id="@+id/btn06"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/lupa3"
+                android:onClick="onClick"
+                android:visibility="invisible"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- BLE -->
+            <Button
+                android:id="@+id/btn07"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:background="@drawable/ble"
+                android:onClick="onClick"
+                android:visibility="invisible"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <!--- CONFIG -->
+            <Button
+                android:id="@+id/btn08"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:background="@drawable/config"
+                android:onClick="onClick"
+                android:visibility="invisible"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="169dp" />
+
+        </TableRow>
+
+        <!--- Fila Separador -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="108dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/label26_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
+                android:textSize="5sp"
+                tools:layout_editor_absoluteX="148dp"
+                tools:layout_editor_absoluteY="170dp"
+                tools:visibility="invisible" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <!--- Botón salir -->
+    <Button
+        android:id="@+id/activity_fichapaciente_btn_salir"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/boton_base"
+        android:enabled="false"
+        android:fontFamily="@font/questrial"
+        android:onClick="onClick"
+        android:text="Salir"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--- Botón GUARDAR -->
+    <Button
+        android:id="@+id/activity_fichapaciente_btn_ok"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/boton_base"
+        android:enabled="false"
+        android:fontFamily="@font/questrial"
+        android:onClick="onClick"
+        android:text="Guardar"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!--- Botón salir SO -->
+    <Button
+        android:id="@+id/activity_fichapaciente_btn_salirso"
+        android:layout_width="71dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/logoandroid"
+        android:onClick="onClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--- Texto log -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/questrial"
+        android:text="Logs"
+        android:textColor="@android:color/black"
+        android:textSize="20dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/activity_fichapaciente_btn_salir"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--- Spinner log -->
+    <Spinner
+        android:id="@+id/spinnerlogs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textSize="20dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+    <!--- Texto Status -->
+    <TextView
+        android:id="@+id/text_conexión_fallida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="SIN CONEXIÓN A INTERNET"
+        android:textSize="30sp"
+        android:textColor="@color/rojizo"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/numero_serie"
+        app:layout_constraintStart_toStartOf="@+id/numero_serie"
+        app:layout_constraintTop_toBottomOf="@+id/numero_serie" />
+
+    <TextView
+        android:id="@+id/txtStatusConf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/questrial"
+        android:text="Conectando"
+        android:textColor="#C5C5C5"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/activity_fichapaciente_btn_salirso"
+        app:layout_constraintStart_toEndOf="@+id/tablaizq"
+        app:layout_constraintTop_toBottomOf="@+id/text_conexión_fallida" />
+
+    <!--Cuenta Atras-->
+    <TextView
+        android:id="@+id/txtCuentaAtras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/cdescarga_paciente"
+        app:layout_constraintEnd_toEndOf="@+id/cdescarga_paciente"
+        app:layout_constraintStart_toStartOf="@+id/cdescarga_paciente"
+        app:layout_constraintTop_toTopOf="@+id/cdescarga_paciente" />
+
+    <TextView
+        android:id="@+id/txtmultipaciente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Activado multi-paciente"
+        android:fontFamily="@font/soleilbold"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/imagePaciente"
+        app:layout_constraintTop_toBottomOf="@+id/imagePaciente" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

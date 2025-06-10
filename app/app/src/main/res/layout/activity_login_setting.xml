@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/fondo_base"
+    tools:context=".ui.admin.tecnico.LoginSetting">
+
+    <TextView
+        android:id="@+id/txtUserStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="@+id/USER_btLogin"
+        app:layout_constraintStart_toEndOf="@+id/USER_btLogin"
+        app:layout_constraintTop_toTopOf="@+id/USER_btLogin" />
+
+    <!--Imagen Users-->
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="115dp"
+        android:layout_height="106dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.33"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.30"
+        app:srcCompat="@drawable/pin" />
+
+    <!--edit IMEI-->
+    <EditText
+        android:id="@+id/editUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:backgroundTint="@android:color/black"
+
+        android:hint="Introducir PIN"
+        android:imeActionLabel="@string/action_sign_in_short"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="phone"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:textColor="#150805"
+        android:textColorHint="#818181"
+        android:textSize="30sp"
+        android:fontFamily="@font/questrial"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="@+id/imageView6" />
+
+    <!--button login-->
+    <Button
+        android:id="@+id/USER_btLogin"
+        android:layout_width="180dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="40dp"
+        android:onClick="onClick"
+        android:text="VALIDAR"
+        android:background="@color/blueLogin"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/editUser"
+        app:layout_constraintStart_toStartOf="@+id/editUser"
+        app:layout_constraintTop_toBottomOf="@+id/editUser" />
+
+    <!--    atras-->
+    <ImageView
+        android:id="@+id/USER_imgAtras"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="40dp"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/fatras" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,53 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/britanic</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>>
+
+    </style>
+
+    <style name="TemaVentanaEmergente" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/popup_background</item>
+    </style>
+
+    <style name="TemaBarra" parent="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal">
+     <item name="colorPrimary">@color/colorAzul</item>
+    </style>
+
+        <style name="smallpb" parent="android:Widget.ProgressBar.Horizontal">
+            <item name="android:backgroundTint">@android:color/transparent</item>
+
+        </style>
+
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorAzul</item>
+    </style>
+
+
+    <style name="AppTheme.Picker" >
+        <item name="android:textSize">50px</item>
+    </style>
+
+    <style name="CustomDialog_NoTitle" parent="Theme.AppCompat.Dialog">
+        <item name="windowNoTitle">true</item>
+    </style>
+
+</resources>

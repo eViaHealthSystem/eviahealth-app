@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llsino"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/lina_divisoria"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--        Pregunta-->
+        <TextView
+            android:id="@+id/mensajepregunta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="100dp"
+            android:fontFamily="@font/questrial"
+            android:text="texto_pregunta"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/grupo_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--        2 x RadioButtons -->
+        <RadioGroup
+            android:id="@+id/grupo_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/opcion0"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:background="@drawable/drawable_1"
+                android:button="@android:color/transparent"
+                android:checked="false"
+                android:fontFamily="@font/questrial"
+                android:minWidth="150dp"
+                android:text="eneo"
+                android:textAlignment="center"
+                android:textColor="@color/recurrente"
+                android:textSize="30sp"
+                tools:layout_editor_absoluteX="233dp"
+                tools:layout_editor_absoluteY="202dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                tools:layout_editor_absoluteX="383dp"
+                tools:layout_editor_absoluteY="202dp" />
+
+            <RadioButton
+                android:id="@+id/opcion1"
+                android:layout_height="60dp"
+                android:background="@drawable/drawable_1"
+                android:button="@android:color/transparent"
+                android:checked="false"
+                android:fontFamily="@font/questrial"
+                android:minWidth="150dp"
+                android:text="esei"
+                android:textAlignment="center"
+                android:textColor="@color/recurrente"
+                android:textSize="30sp"
+                tools:layout_editor_absoluteX="403dp"
+                tools:layout_editor_absoluteY="202dp" />
+
+        </RadioGroup>
+
+        <!--    Button Audio-->
+        <ImageButton
+            android:id="@+id/imageButtonAudio"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/custom_imagen_button"
+            android:onClick="onClick"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/grupo_2"
+            app:layout_constraintVertical_bias="0.7"
+            app:srcCompat="@drawable/audio_on" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

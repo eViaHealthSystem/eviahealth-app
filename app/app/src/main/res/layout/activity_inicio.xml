@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_inicio_parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/inicio">
+
+    <!--    Button Oculto 1-->
+    <Button
+        android:id="@+id/buttonConfig1"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@android:color/transparent"
+        android:text=""
+        android:onClick="onClick"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    Button Oculto 2-->
+    <Button
+        android:id="@+id/buttonConfig2"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@android:color/transparent"
+        android:text=""
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--    Button Oculto 3-->
+    <Button
+        android:id="@+id/buttonConfig3"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@android:color/transparent"
+        android:text=""
+        android:onClick="onClick"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    Button Oculto 4-->
+    <Button
+        android:id="@+id/buttonConfig4"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@android:color/transparent"
+        android:text=""
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!--    Button Inicio Ensayo-->
+    <Button
+        android:id="@+id/activity_inicio_boton_inicio"
+        android:layout_width="350dp"
+        android:layout_height="98.33dp"
+        android:background="@drawable/iniciarchequeo"
+        android:enabled="false"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <!--    Button Version-->
+    <TextView
+        android:id="@+id/txtVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/questrial"
+        android:text="rev. 000"
+        android:textColor="#C5C5C5"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--    Frame Meeting Planificada-->
+    <FrameLayout
+        android:id="@+id/FramePlanificadaMeeting2"
+        android:layout_width="484dp"
+        android:layout_height="184dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/transparente"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--    Marco-->
+            <ImageView
+                android:id="@+id/marco"
+                android:layout_width="420dp"
+                android:layout_height="120dp"
+                android:background="@drawable/rounded_border"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--    Imagen zoom-->
+            <ImageView
+                android:id="@+id/imgdoctor"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="-32dp"
+                android:layout_marginEnd="-32dp"
+                app:layout_constraintEnd_toStartOf="@+id/marco"
+                app:layout_constraintTop_toTopOf="@+id/marco"
+                app:srcCompat="@drawable/zoom" />
+
+            <!--    Text Titulo-->
+            <TextView
+                android:id="@+id/textTitulo"
+                android:layout_width="370dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/britanic"
+                android:gravity="center"
+                android:text="Videollamada planaficada"
+                android:textSize="28sp"
+                app:layout_constraintEnd_toEndOf="@+id/marco"
+                app:layout_constraintStart_toStartOf="@+id/marco"
+                app:layout_constraintTop_toTopOf="@+id/marco" />
+
+            <!--    Texto Fecha Meeting-->
+            <TextView
+                android:id="@+id/textFechaMeeting"
+                android:layout_width="wrap_content"
+                android:text="2023-05-30 12:00"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
+                android:textSize="26sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/marco"
+                app:layout_constraintEnd_toEndOf="@+id/marco"
+                app:layout_constraintStart_toStartOf="@+id/marco"
+                app:layout_constraintTop_toBottomOf="@+id/textTitulo" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+    <!--    Boton Politica Privacidad 2-->
+    <ImageButton
+        android:id="@+id/imageButtonPoliticaPrivacidad"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/custom_imagen_button"
+        android:padding="10dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/txtVersion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.33"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_inicio_boton_inicio"
+
+        android:onClick="onClick"
+        app:srcCompat="@drawable/politica_calidad" />
+
+    <!--    Text Política de Privacidad-->
+    <TextView
+        android:id="@+id/textTitulo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/soleilbold"
+        android:text="Condiciones de uso"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageButtonPoliticaPrivacidad"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonPoliticaPrivacidad"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonPoliticaPrivacidad" />
+
+    <!--    Boton Formacion 2-->
+    <ImageButton
+        android:id="@+id/imageButtonFormacion"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/custom_imagen_button"
+        android:padding="10dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/txtVersion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.66"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_inicio_boton_inicio"
+        android:onClick="onClick"
+        app:srcCompat="@drawable/formacion" />
+
+    <!--    Text Educación-->
+    <TextView
+        android:id="@+id/textTitulo3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/soleilbold"
+        android:text="Educación y Formación"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageButtonFormacion"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonFormacion"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonFormacion" />
+
+    <TextView
+        android:id="@+id/txt_status_error"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="40dp"
+        android:text="@string/msg_airmode"
+        android:textColor="@color/rojizo"
+        android:textSize="24sp"
+        app:fontFamily="@font/soleilbold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/img_warning"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_warning"
+        app:layout_constraintTop_toTopOf="@+id/img_warning" />
+
+    <ImageView
+        android:id="@+id/img_warning"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9"
+        app:srcCompat="@drawable/warning" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/fondo_base_logo"
+    tools:context=".ui.admin.tecnico.DobleAutenticacion">
+
+    <TextView
+        android:id="@+id/txtStatusCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:text="----"
+        android:textSize="18sp"
+        android:textColor="@color/rojizo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!--imagen imei-->
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/editCODE"
+        app:layout_constraintEnd_toEndOf="@+id/editCODE"
+        app:layout_constraintStart_toStartOf="@+id/editCODE"
+        app:srcCompat="@drawable/user2" />
+
+    <!--edit IMEI-->
+    <EditText
+        android:id="@+id/editCODE"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:backgroundTint="@android:color/black"
+        android:fontFamily="@font/questrial"
+        android:hint="Code"
+        android:imeActionLabel="@string/action_sign_in_short"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="phone"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:textColor="#150805"
+        android:textColorHint="#818181"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--button save-->
+    <Button
+        android:id="@+id/btVerificar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@color/blueLogin"
+        android:onClick="onClick"
+        android:text="Verificar"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/editCODE"
+        app:layout_constraintStart_toStartOf="@+id/editCODE"
+        app:layout_constraintTop_toBottomOf="@+id/editCODE" />
+
+    <!--    atras-->
+    <ImageView
+        android:id="@+id/CODE_imgAtras"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="40dp"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/fatras" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

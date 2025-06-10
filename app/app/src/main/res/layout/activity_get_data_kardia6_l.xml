@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/idfondoK6L"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_base_logo"
+    tools:context=".ui.ensayo.ecg.get_dataKardia6L">
+
+<!--    Imgen Kardia 6L-->
+    <ImageView
+        android:id="@+id/image_k6l"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/k6l" />
+
+<!--    Texto Mensaje-->
+    <TextView
+        android:id="@+id/txtmessage_k6l"
+        android:layout_width="700dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-20dp"
+        android:fontFamily="@font/soleil_light"
+        android:gravity="center"
+        android:singleLine="false"
+        android:text="Manténgase inmóvil mientras se realiza el registro de su electrocardiograma (ECG)."
+        android:textColor="@color/recurrente"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/image_k6l"
+        app:layout_constraintEnd_toStartOf="@+id/image_k6l"
+        app:layout_constraintStart_toStartOf="parent" />
+
+<!--    android:text="Manténgase inmóvil mientras se realiza el registro de su electrocardiograma (ECG)."-->
+<!--    android:text="Manténgase inmóvil mientras observa la cuenta atrás de 30 segundos del temporizador hasta que se complete el registro del ECG."-->
+
+<!--    Circulo progreso-->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/circle_shape"
+        android:indeterminate="false"
+        android:max="30"
+        android:progress="0"
+        android:progressDrawable="@drawable/circular_progress_bar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txtmessage_k6l"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="@+id/txtmessage_k6l"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    Texto contador de progreso-->
+    <TextView
+        android:id="@+id/timerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="30"
+        android:textSize="40sp"
+        app:fontFamily="@font/soleilbold"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        app:layout_constraintStart_toStartOf="@+id/progressBar"
+        app:layout_constraintTop_toTopOf="@+id/progressBar" />
+
+    <!--    Imagen corazon peque-->
+    <ImageView
+        android:id="@+id/image_cor_peque"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="@+id/image_cor"
+        app:layout_constraintStart_toStartOf="@+id/image_cor"
+        app:layout_constraintTop_toTopOf="@+id/progressBar"
+        app:srcCompat="@drawable/cor" />
+
+<!--    Imagen corazon grande-->
+    <ImageView
+        android:id="@+id/image_cor"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="@+id/txtmessage_k6l"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="@+id/txtmessage_k6l"
+        app:layout_constraintTop_toTopOf="@+id/progressBar"
+        app:srcCompat="@drawable/cor" />
+
+
+
+    <!--    Texto BPM-->
+    <TextView
+        android:id="@+id/txtbpm_k6l"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/soleilbold"
+        android:text="--- BPM"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+        app:layout_constraintEnd_toStartOf="@+id/image_cor"
+        app:layout_constraintTop_toTopOf="@+id/progressBar" />
+
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/cdescarga_k6l"
+        android:layout_width="263dp"
+        android:layout_height="234dp"
+        android:indeterminateTint="@color/griscancelar"
+        android:progressBackgroundTint="@color/griscancelar"
+        android:progressTint="@color/griscancelar"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtStatusK6L"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="@font/questrial"
+        android:text="Conectando"
+        android:textColor="#C5C5C5"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--    Button Audio-->
+    <ImageButton
+        android:id="@+id/imageButtonAudio"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/custom_imagen_button"
+        android:onClick="onClick"
+        android:padding="8dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96"
+        app:srcCompat="@drawable/audio_on" />
+
+    <TextView
+        android:id="@+id/txt_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="No suelte los electrodos, ni se mueva."
+        android:fontFamily="@font/soleilbold"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/progressBar"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+    <Button
+        android:id="@+id/btEmpezarECG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/boton_base"
+        android:fontFamily="@font/soleil_regular"
+        android:onClick="onClick"
+        android:text="Empezar"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="horizontal"
+    android:background="@drawable/fondo_base"
+    android:keepScreenOn="true"
+    tools:context=".ui.config.lung.config_LUNG">
+
+    <!--    Titulo-->
+    <TextView
+        android:id="@+id/LUNG_txtTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/questrial"
+        android:singleLine="false"
+        android:text="Configuración para el Monitor Pulmonar"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    Genero-->
+    <TextView
+        android:id="@+id/txt00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Género:"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintStart_toStartOf="@+id/LUNG_txtFEV1PB"
+        app:layout_constraintTop_toBottomOf="@+id/LUNG_txtTitulo" />
+
+    <TextView
+        android:id="@+id/LUNG_txtGenero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hombre"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/LUNG_PBUnidad"
+        app:layout_constraintTop_toTopOf="@+id/txt00" />
+
+    <!--    Edad-->
+    <TextView
+        android:id="@+id/txt01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Edad:"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintStart_toStartOf="@+id/txt00"
+        app:layout_constraintTop_toBottomOf="@+id/txt00" />
+
+    <TextView
+        android:id="@+id/LUNG_txtEdad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="60"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/LUNG_PBUnidad"
+        app:layout_constraintTop_toTopOf="@+id/txt01" />
+
+    <!--    Peso-->
+    <TextView
+        android:id="@+id/txt02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:text="Peso:"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintStart_toEndOf="@+id/LUNG_txtGenero"
+        app:layout_constraintTop_toTopOf="@+id/txt00" />
+
+    <TextView
+        android:id="@+id/LUNG_txtPeso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:text="080"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/txt02"
+        app:layout_constraintTop_toTopOf="@+id/txt02" />
+
+    <TextView
+        android:id="@+id/txt03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Kg"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintStart_toEndOf="@+id/LUNG_txtPeso"
+        app:layout_constraintTop_toTopOf="@+id/LUNG_txtPeso" />
+
+    <!--    Altura-->
+    <TextView
+        android:id="@+id/txt04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Altura:"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintStart_toStartOf="@+id/txt02"
+        app:layout_constraintTop_toTopOf="@+id/txt01" />
+
+    <TextView
+        android:id="@+id/LUNG_txtAltura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="125"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/LUNG_txtPeso"
+        app:layout_constraintTop_toTopOf="@+id/txt04" />
+
+    <TextView
+        android:id="@+id/txt05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="cm"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintStart_toEndOf="@+id/LUNG_txtAltura"
+        app:layout_constraintTop_toTopOf="@+id/LUNG_txtAltura" />
+
+    <TextView
+        android:id="@+id/txtInfoPaciente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Valores por defecto de paciente, debe actualizarlos."
+        android:textSize="24dp"
+
+        app:fontFamily="@font/soleilbold"
+        app:layout_constraintEnd_toEndOf="@+id/LUNG_btCalcularPB"
+        app:layout_constraintStart_toStartOf="@+id/LUNG_txtFEV1PB"
+        app:layout_constraintTop_toBottomOf="@+id/LUNG_PBUnidad" />
+
+    <!--    FEV1PB-->
+    <TextView
+        android:id="@+id/LUNG_txtFEV1PB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="FEV1PB"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt01" />
+
+    <NumberPicker
+        android:id="@+id/LUNG_PBUni"
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toEndOf="@+id/LUNG_PBDecimalDos"
+        app:layout_constraintTop_toTopOf="@+id/LUNG_PBUnidad"></NumberPicker>
+
+    <NumberPicker
+        android:id="@+id/LUNG_PBPunto"
+        android:layout_width="20dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toEndOf="@+id/LUNG_PBUnidad"
+        app:layout_constraintTop_toTopOf="@+id/LUNG_PBUnidad"></NumberPicker>
+
+    <NumberPicker
+        android:id="@+id/LUNG_PBDecimalUno"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toEndOf="@+id/LUNG_PBPunto"
+        app:layout_constraintTop_toTopOf="@+id/LUNG_PBUnidad"></NumberPicker>
+
+    <NumberPicker
+        android:id="@+id/LUNG_PBDecimalDos"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toEndOf="@+id/LUNG_PBDecimalUno"
+        app:layout_constraintTop_toTopOf="@+id/LUNG_PBUnidad"></NumberPicker>
+
+    <!--button calcular FEV1PB-->
+    <Button
+        android:id="@+id/LUNG_btCalcularPB"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:background="@color/blueLogin"
+        android:onClick="onClick"
+        android:text="Calcular"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/LUNG_PBUnidad"
+        app:layout_constraintStart_toEndOf="@+id/LUNG_PBUni"
+        app:layout_constraintTop_toTopOf="@+id/LUNG_PBUnidad" />
+
+
+    <!--    Titulo Semáforo-->
+    <NumberPicker
+        android:id="@+id/LUNG_PBUnidad"
+        android:layout_width="60dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/LUNG_txtFEV1PB"
+        app:layout_constraintStart_toEndOf="@+id/LUNG_txtFEV1PB"
+        app:layout_constraintTop_toTopOf="@+id/LUNG_txtFEV1PB"></NumberPicker>
+
+    <TextView
+        android:id="@+id/LUNG_txtTituloSemaforo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:fontFamily="@font/questrial"
+        android:singleLine="false"
+        android:text="Semáforo"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/LUNG_txtZG"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:layout_width="400dp"
+        android:layout_height="1dp"
+        android:layout_marginEnd="20dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="@+id/LUNG_txtTituloSemaforo"
+        app:layout_constraintEnd_toStartOf="@+id/LUNG_txtTituloSemaforo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/LUNG_txtTituloSemaforo" />
+
+    <View
+        android:layout_width="400dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="@+id/LUNG_txtTituloSemaforo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/LUNG_txtTituloSemaforo"
+        app:layout_constraintTop_toTopOf="@+id/LUNG_txtTituloSemaforo" />
+
+    <!--    Zona Verde-->
+    <TextView
+        android:id="@+id/LUNG_txtZG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:text="Zona\nVerde"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintBottom_toTopOf="@+id/LUNG_txtStatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <NumberPicker
+        android:id="@+id/LUNG_ZG"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/LUNG_txtZG"
+        app:layout_constraintStart_toEndOf="@+id/LUNG_txtZG"
+        app:layout_constraintTop_toTopOf="@+id/LUNG_txtZG"></NumberPicker>
+
+    <NumberPicker
+        android:id="@+id/LUNG_POR_ZG"
+        android:layout_width="40dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toEndOf="@+id/LUNG_ZG"
+        app:layout_constraintTop_toTopOf="@+id/LUNG_ZG"></NumberPicker>
+
+    <!--    Zona Amarrilla-->
+    <TextView
+        android:id="@+id/LUNG_txtZA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:text="Zona\nAmarrilla"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintStart_toEndOf="@+id/LUNG_POR_ZG"
+        app:layout_constraintTop_toTopOf="@+id/LUNG_txtZG" />
+
+    <NumberPicker
+        android:id="@+id/LUNG_ZA"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/LUNG_txtZG"
+        app:layout_constraintStart_toEndOf="@+id/LUNG_txtZA"
+        app:layout_constraintTop_toTopOf="@+id/LUNG_txtZG"></NumberPicker>
+
+    <NumberPicker
+        android:id="@+id/LUNG_POR_ZA"
+        android:layout_width="40dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toEndOf="@+id/LUNG_ZA"
+        app:layout_constraintTop_toTopOf="@+id/LUNG_ZA"></NumberPicker>
+
+    <!--    Zona NAranja-->
+    <TextView
+        android:id="@+id/LUNG_txtZO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:text="Zona\nNaranja"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintStart_toEndOf="@+id/LUNG_POR_ZA"
+        app:layout_constraintTop_toTopOf="@+id/LUNG_txtZG" />
+
+    <NumberPicker
+        android:id="@+id/LUNG_ZO"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/LUNG_txtZG"
+        app:layout_constraintStart_toEndOf="@+id/LUNG_txtZO"
+        app:layout_constraintTop_toTopOf="@+id/LUNG_txtZG"></NumberPicker>
+
+    <NumberPicker
+        android:id="@+id/LUNG_POR_ZO"
+        android:layout_width="40dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toEndOf="@+id/LUNG_ZO"
+        app:layout_constraintTop_toTopOf="@+id/LUNG_ZO"></NumberPicker>
+
+
+    <!--button cofigurar-->
+    <Button
+        android:id="@+id/LUNG_btConectar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="80dp"
+        android:background="@color/blueLogin"
+        android:onClick="onClick"
+        android:text="CONECTAR\nDISPOSITIVO"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LUNG_txtTitulo" />
+
+    <!--button specifyOnlineUser-->
+    <Button
+        android:id="@+id/LUNG_btUpdateDate"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@color/blueLogin"
+        android:onClick="onClick"
+        android:text="Actualizar\nFecha"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/LUNG_btConectar"
+        app:layout_constraintTop_toBottomOf="@+id/LUNG_btConectar" />
+
+
+    <!--button DeleteHistoryData-->
+    <Button
+        android:id="@+id/LUNG_btDeleteHistoryData"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@color/blueLogin"
+        android:onClick="onClick"
+        android:text="Clear\nMemory Data"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/LUNG_btUpdateDate"
+        app:layout_constraintTop_toBottomOf="@+id/LUNG_btUpdateDate" />
+
+    <!--button factory reset-->
+    <Button
+        android:id="@+id/LUNG_btResetFactory"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@color/blueLogin"
+        android:onClick="onClick"
+        android:text="Reset\nDefault"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/LUNG_btDeleteHistoryData"
+        app:layout_constraintTop_toBottomOf="@+id/LUNG_btDeleteHistoryData" />
+
+    <!--button guardar datos paciente-->
+    <Button
+        android:id="@+id/LUNG_btSavePatient"
+        android:layout_width="170dp"
+        android:layout_height="80dp"
+        android:background="@color/blueLogin"
+        android:onClick="onClick"
+        android:text="GUARDAR\nINFORMACIÓN"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/CSCROLLER_ID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/CSCROLLER_ID"
+        app:layout_constraintTop_toTopOf="@+id/CSCROLLER_ID" />
+
+    <!--    status-->
+    <TextView
+        android:id="@+id/LUNG_txtStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Status"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/CSCROLLER_ID"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/CSCROLLER_ID" />
+
+    <!--    log-->
+    <ScrollView
+        android:id="@+id/CSCROLLER_ID"
+        android:layout_width="800dp"
+        android:layout_height="140dp"
+        android:layout_marginBottom="4dp"
+        android:fillViewport="true"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.34"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:id="@+id/LUNG_txtResult"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@android:drawable/editbox_background"
+            android:text="Result info"
+            app:layout_constraintTop_toBottomOf="@+id/CbtMB6_SETTINGS" />
+    </ScrollView>
+
+    <!--circulo de proceso-->
+
+    <!--    texto con el circulo de proceso-->
+    <ProgressBar
+        android:id="@+id/LUNG_ProgressBar"
+        android:layout_width="182dp"
+        android:layout_height="193dp"
+        android:indeterminateTint="@color/recurrente"
+        android:progressBackgroundTint="@color/recurrente"
+        android:progressTint="@color/recurrente"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/LUNG_txtProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="..."
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/LUNG_ProgressBar"
+        app:layout_constraintEnd_toEndOf="@+id/LUNG_ProgressBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/LUNG_ProgressBar"
+        app:layout_constraintTop_toTopOf="@+id/LUNG_ProgressBar" />
+
+    <!--    rallas para limitar limite inferior de la pantalla-->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="-----------------"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!--    atras-->
+    <ImageView
+        android:id="@+id/LUNG_imfAtras"
+        android:layout_width="75dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/fatras" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

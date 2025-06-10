@@ -1,0 +1,742 @@
+app-eviahealth-zoom rev 1.0.151 (20-11-2023)
+-------------------------------------------------------------------------------------------------
+Añadido la gestión de datos de HeartRate y BloodOxygen, NO SE ENVIAN TODAVIA.
+Añadido tratamiento y envío de datos en bloque de steps, sleeps y encuestas. 
+Se comenta para que no se envíen los datos en registros de forma individual de steps, sleeps y encuestas. 
+
+Se añade en la pantalla de configuración de dispositivos un icono para eliminar el paciente asignado
+actualmente en la tablet y dejarla (Sin configuración). Este borrará los ficheros de configuración y 
+los datos guardados en la carpeta de "_subido" y "ihealth_sdk".
+
+Se detecta que cuando no existe el archico pdf de política en el destino especificado sale en blanco.
+Se adapta para que si falla la comunicación con el servidor ponga la política por defecto.
+Se detecta que cuando se habría la política de calidad procedente del servidor se formación se habría dos veces. ( se repara)
+
+Esta versión no es compatible con la última versión de MiniMi (superAdmin)
+
+--------------------------------------------------------------------------------------------------
+app-eviahealth rev 1.0.152 (en play console 11-01-2024)
+--------------------------------------------------------------------------------------------------
+Se detecta en la rev 1.0.151 que al subir las encuetas no se elimina el archivo y provoca que siempre tenga encuestas que subir.
+Se detecta que el valor del pulso en los pulsioxímetros PO-60 de Beures los valores mayores de 127 pulsaciones no se pasean correctamente.
+
+Se corrigen, los dos errores detectados.
+
+Se añade en el log la versión del software para poder comprobar con que versión se realizó el ensayo.
+
+--------------------------------------------------------------------------------------------------
+app-eviahealth-zoom rev 1.0.153 (en play console 19-01-2024)
+-------------------------------------------------------------------------------------------------
+Se detecta en la rev 1.0.152 que al descargar datos de actividad se genera el fichero de para subir la información en bloques
+y estos ficheros no se envian al servidor y no se borran. Se hace que el contenido no se suba pero que si se elimine el fichero.
+ 
+Se corrigen, los dos errores detectados.
+
+--------------------------------------------------------------------------------------------------
+app-eviahealth-zoom rev 1.0.154 (23-01-2024) >> TEST APP EVIAHEALTH
+-------------------------------------------------------------------------------------------------
+Se detecta que el SDK de iHealth tiene un bug en el manejo de la báscula HS2S. 
+De la báscula está funcional la parte de solo peso.
+Falta establecer los mensajes de errores en el trascurso de la medición para mostrarlos en la actividad view_HS2S.
+Falta implementar y mostrar cuando se realiza la medición de peso + grasa corporal.
+
+Cambiado SDK de iHealth a la versión 2.11.0
+Actualizado sdk zoom a la versión 5.16.6.17198
+
+Se añade en loginuser el password "play" o "p" para acceder a Play Store
+Añadido comentarios de Parseando en la pantalla de descarga de MAMBO6.
+
+Se añade en el fragment de que ya puede entrar en la videollamada un progress cirular cuando se pulsa el botón para que el paciente vea que se está procesando.
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth-zoom rev 1.0.155 (28-02-2024) >> TEST APP EVIAHEALTH
+-------------------------------------------------------------------------------------------------
+Añadidos nuevos timers en an le actividad de JoinMeetingActivity para realizar timeout de situaciones posibles de una videollamada.
+Se incluye en Inicio que el botón de ensayo no esté activo hasta que no se haya realizado la prinera consulta a la DB sobre las videollamadas.
+
+
+Falta establecer los mensajes de errores en el trascurso de la medición para mostrarlos en la actividad view_HS2S.
+Falta implementar y mostrar cuando se realiza la medición de peso + grasa corporal.
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth-zoom rev 1.0.156 (29-02-2024) >> PLAY CONSOLE
+-------------------------------------------------------------------------------------------------
+Se agrega en un timer de 6 segundos que cuando el paciente abandone la reunón sin que el anfitrión la haya finalizado
+cierre la actividad de JoinMeetingActivity.
+
+Falta establecer los mensajes de errores en el trascurso de la medición para mostrarlos en la actividad view_HS2S.
+Falta implementar y mostrar cuando se realiza la medición de peso + grasa corporal.
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth-zoom rev 1.0.157 (XX-XX-2024) >> PLAY CONSOLE TEST
+-------------------------------------------------------------------------------------------------
+Se detecta que la videollamada no funciona. Zoom ha realizado un cambio sin comunicar y ya no se pueden acceder a reuniones exteriores si no están en la misma
+cuanta o se publica la app en marketplace de zoom.
+Para solucionarlo se coge del campo de password de la db las credenciales de la cuenta que ha generado la reunión, forzando que sea la misma cuenta la que se utiliza
+en la videollamada para prescriptor como para paciente.
+
+Se detectó en una prueba que el pulsioxímetro PO60 cuando estaba conectado al dispositivo se quedo en CONNECT(1) y no pasó de ahí.
+Se crea un timeout que evita que si el evento no se produce salte el timeout y siga la funcionalidad del programa.
+
+Posible situación no contemplada:
+Que el paciente haya entrado en una videollamada y el prescriptor no entre y la anule. En ese caso el paciente se queda en la video llamada hasta que finaliza el tiempo total
+o pulsa el botón de abandonar. (Como mejora se podría poner un timer que mirar si la videollamada sigue anctiva mientras no se haya conectado el prescritor y en caso de
+haberse eliminado salir automáticamente de la videollamada)
+
+Falta establecer los mensajes de errores en el trascurso de la medición para mostrarlos en la actividad view_HS2S.
+Falta implementar y mostrar cuando se realiza la medición de peso + grasa corporal.
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth-zoom rev 1.0.158 (05-04-2024) >> PLAY CONSOLE TEST_KIOSK_EVIAHEALTH >> (09-04-2024) APP EVIAHEALTH
+-------------------------------------------------------------------------------------------------
+Se implementa la captura de foto del paciente y el envio al servidor.
+
+Falta establecer los mensajes de errores en el trascurso de la medición para mostrarlos en la actividad view_HS2S.
+Falta implementar y mostrar cuando se realiza la medición de peso + grasa corporal.
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth-zoom rev 1.0.159 (17-04-2024) >> PLAY CONSOLE TEST_KIOSK_EVIAHEALTH
+-------------------------------------------------------------------------------------------------
+En la configuración de dispositivos se cambia la forma de scanear dispositivos ya que funciona mejor el método Le:
+   bluetoothLeScanner = bluetoothAdapter.getBluetoothLeScanner();
+   bluetoothLeScanner.startScan(null, settings, scanCallback);
+
+Añadido termómetro: dispositivo FT95 de BEURER, en dispositivosPacientem en captura y visualización de datos. Se puede vincular en la primera conexión ble.
+
+Se añade para que el PO60 se puede vincular desde la medida.
+
+Falta establecer los mensajes de errores en el trascurso de la medición para mostrarlos en la actividad view_HS2S.
+Falta implementar y mostrar cuando se realiza la medición de peso + grasa corporal.
+-------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth-zoom rev 1.0.160 (25-04-2024) >> PLAY CONSOLE TEST_KIOSK_EVIAHEALTH 
+-------------------------------------------------------------------------------------------------
+(ANDROID 14)
+
+Se actualiza al sdk de zoom ver 6.0.2.21328, en esta versión desaparse el módulo de commonlib y solo queda el de mobilertc.
+En la actividad de JoinMeetingActivity se añaden varios métodos del InMeetingServiceListener y se eliminan los deprecated que ya no existen.
+
+Actualizado a nivel de API máximo y de compilación 34. (ANDROID 14)
+Para que funcionara en nivel de API 34 se ha tenido que actualizar las dependencias a las versiones recomendadas por android studio y
+modificado todos los 
+
+registerReceiver(mCallbackBeurer, makeUpdateIntentFilter());
+POR
+registerReceiver(mCallbackBeurer, makeUpdateIntentFilter(), RECEIVER_EXPORTED);
+YA QUE AHORA ES OBLIGATORIO EN ANDROID 14
+
+Se detecta que hay un bug en los tensiometros de beurer BM57, BC54, BC85 Y BC87, se presuponía que el dispositivo descargaba todas las mediciones realizadas y que el último registro descargardo era el
+valor de la última medición. Esto no es correcto cuando se han realizado mediciones en los dos usuarios posibles M1 y M2 la descarga primero desscraga los valores de M1 y 
+a continuación los valores de M2, sus últimos registros son la última medición realizada con ese usaario. Para mostrar y subir el valor medido se compara el último registro
+de cada usuario y el que tenga mayor fecha es la última medición realizada por el dispositivo. IMPORTANTE: Para una correcta descarga el tensiómetro siempre tiene que tener 
+la fecha y hora actualizada.
+
+Se ha quitado el dispositivo AS99 ya que no se va ha utilizar nunca porque no cumple con los requisitos de sueño que queremos.
+
+Se añade la forma de scan ble en la actividad de PO60 como se realiza en el FT95. 
+
+Falta establecer los mensajes de errores en el trascurso de la medición para mostrarlos en la actividad view_HS2S.
+Falta implementar y mostrar cuando se realiza la medición de peso + grasa corporal.
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth-zoom rev 1.0.161 (21-05-2024) >>  NO INSTALAR
+-------------------------------------------------------------------------------------------------
+
+Con la versión de Android Studio Bumblebee 2021.1.1 Patch 2 y Gradle 7.2, las tablets se desconectaba todo el rato y cada vez que se realizaba un cambio de código
+y se realizaba un Build, daba un error por la versión de android 14 en la tablet, para funcionar había que desinstalar manualmente la app y volver a instalar.
+
+Se pasa la app a una versión en Androd Studio Jellyfish 2023.3.1, Gradle 8.7. (16-05-2024 instalación ultima versión disponible)
+
+Se ha creado una nueva app con el el mismo package esta versión de Android Studio, mediante los ficheros originales, añadiendo las dependencias necesarias.
+Se realiza limpieza de layouts e imagenes no utilizados.
+Las imágenes se pasan a formato webp, que ocupan menos espacio y son más rápidas de cargar en las actividades.
+
+Se corrigen todos los errores de compilación que han ido surguiendo en el proceso.
+
+Actualizado el SDK de iHealth a la versión iHealthSDK_2.12.0.jar
+Actualizado el SDK de Transtek a la versión lifesense-device-ble-2.3.9-build1.jar
+
+Se realiza scan de qr de paciente.
+Se configuran dispositivos.
+Se realiza una foto de paciente.
+Se prueban los dispositivos PO60, MAMBO6, NT13B, ENCUESTA 2, TERMOMETRO CLASICO, PO3M
+Se suben datos correctamente.
+
+Se prueba ha realizar una videollamada correctamente.
+
+NO se detectan problemas de funcionamiento.
+
+El directorio del projecto cambia de app-eviahealth-zoom >> app-eviahealth
+
+SE DETECTA BUG (NO INSTALAR), ver rev 1.0.162
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth-zoom rev 1.0.162 (23-05-2024) >> 
+-------------------------------------------------------------------------------------------------
+
+Se detecta que cuando se instala la app por primera vez y en el backup en dispositivos no existia los parámetros "extra" en cada dispositivo, la app daba una exception
+y mostraba "Sin configuración" aunque se cargaban correctamente los ficheros.
+Se solucióna, trolando que sino existe ese parámetro se añade un valor vacio por defecto '{}'.
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth rev 1.0.163 (28-08-2024) >> 
+-------------------------------------------------------------------------------------------------
+
+Se cambia el layout de configuración de dispositivos y se añade el calendario para que se pueda establecer que días de las semana se hace el ensayo por dispositivo.
+Este parámetro se añade en el parámetro de extra de cada dispositivo.
+
+Se añade una nueva actividad para las encuestas de tipo CAT. Ahora se trata como un nuevo dispositivo. Se consideran preguntas de encuestas CAT todas
+aquellas que el calor de cat != null.
+La actividad de Encuesta.java cambia para que las preguntas que se muestren sean solo las que cat == null.
+
+Queda funcional el día de la semana para cada dispositivo en el ensayo.
+
+Se detecta que la conexión entre el ContentPrivider y la app no funciona.
+La APP de BACKUP-EVIAHEALTH se ha tenido que modificar para que funcione correctamente añadiendo unos permisos personalizados.
+En esta versión se incluyen los permisos personalizados para poder acceder al contenido del ContentProvider.
+
+Se distribuyen de otra forma el layout de configuración de dispositivos para poder añadir el monitor pulmonar. 
+Se añade DispositivosPaciente el Monitor Pulmonar, se detecta y se pasa a configuración
+Se añade una actividad para configurar los parámetros o características del paciente necesarios para la realización del cálculos.
+Se añade en la actividad de configuración la comunicación con el lung.
+
+Se añaden las actividades para la realización del ensayo del monitor pulmonar.
+En la parte de visualización de resultados se muestra el semáforo y los valores establecidos.
+Para la visualización del semáforo con la flecha que indica %, se ha hecho que en las zonas de color verde y rojo se dividan en 4 tramos
+que muestran una mejor visualización de la flecha, obteniendo mejor el estado del paciente.
+Al finalizar el ensayo de forma correcta se genera el fichero con los datos del test que se enviarán.
+
+
+Cambiado el modo de subir los datos, se han sacado los logs generales los que están en fil + los de ihealth,
+para que se suban una única vez.
+Se arregla la forma de mostrar el porcentaje calculando según los ficheros que se van subir
+Se realiza una función para enviar los logs en bloques de 1MB si el archivo es más grande.
+Se añada la subir da los datos del monitor pulmonar.
+
+Añadido en la pantalla de inicio la detección de la Tablet en modo AVIÓN. Si se detecta este modo, la Tablet lo muestra y no deja realizar el ensayo.
+Añadido en la pantalla de inicio que se vea cuando el botón de "Iniciar ensayo" está deshabilitado,
+
+Se cambian algunas pantallas con el nuevo logotipo de eviahealth:
+- Pantalla de inicio con todas sus posibilidades
+- Pantallas relacionadas con el monitor pulmonar.
+- Todas las pantallas que utilizaban como fondo en el layout "fondo_base_logo". 
+
+NOTAS:
+Esta versión tiene deshabilitada la detección de la báscula.
+
+Este VERSION SOLO ES COMPATIBLE CON LA VERSIÓN DE BACKUP 1.0.7 O SUPERIOR
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth rev 1.0.164 (11-09-2024) >> PLAY CONSOLE TEST_KIOSK_EVIAHEALTH 
+-------------------------------------------------------------------------------------------------
+Añadido en DispositivosPaciente la configuración de las características del paciente.
+Se añaden las consultas de api para la descarga y actualización de las características del paciente.
+Se añade la actividad para modificar las características del paciente y enviar los datos a la DB.
+Se modifica la actividad de configuración del monitor pulmonar para que coja correctamente los datos del paciente con la nueva filosofía,
+quitándose los datos de paciente del campo "extras" de la tabla "EquiposPaciente" de ese dispositivo.
+Se añade en la configuración del monitor pulmonar una indicación cuando los datos de paciente se han cargado por defecto.
+Se termina la actividad de configuración de la báscula hs2s incluyendo la nueva filosofía de paciente.
+
+Se adapta la actividad de realización del test del monitor pulmonar para que utilice la nueva filosofía de paciente.
+Se adapta la actividad de la báscula con la nueva filosofía de paciente. 
+Se termina la implementación de la medición de la báscula incluyendo la medición de la masa corporal y la descarga de históricos.
+Se cambian la actividad de visualización de los datos de la báscula copiando el formato de la app iHealth MyVitals.
+
+Se modifica la actividad del termómetro NT13B de iHealth para que cuando el paciente se mida en Fahrenheit se muestren y envíen los datos en Celcius.
+
+Se cambian el nuevo logo en todas las imágenes que quedaron pendientes.
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth rev 1.0.165 (30-09-2024) >> PLAY CONSOLE 
+-------------------------------------------------------------------------------------------------
+
+Se cambia el layout de visualización del tensiómetro (bp3l) y se genera otra actividad para mostrar cuando se produce un fallo con el tensiómetro (bp3l).
+Se cambia el layout de visualización del oxímetro (po3m) y se genera otra actividad para mostrar cuando se produce un fallo con el oxímetro (po3m).
+Se cambia el layout de visualización del oxímetro (po60) y se genera otra actividad para mostrar cuando se produce un fallo con el oxímetro (po60).
+
+Añadido el cálculo del FEV1 PB en el botón de configuración.
+
+Cambiado en la pantalla de inicio "Política de privacidad" por "Condiciones de uso"
+
+Añadido métodos de funcionalidad en el servicio bluetooth, para poder enviar peticiones de CHARACTERISTIC_UUID de tipo read.
+
+Añadido báscula BEURER modelo BF600:
+- Añadido en la actividad de detección de dispositivos y su configuración.
+- Añadido actividades de descarga de datos, visualización de resultados y visualización de fallos.
+
+Añadido registros de logs de funcionamiento en las actividades de báscula y monitor pulmonar.
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth rev 1.0.166 (23-10-2024) >> PLAYCONSOLE
+-------------------------------------------------------------------------------------------------
+
+Añadido en DispositivosPaciente un icono para activar el modo MultiPaciente.
+
+El modo MultiPaciente solicitará cuando se realice el ensayo el identificador de paciente donde se van a volcar lo datos
+y mostrará el nombre del paciente. Si se confirma que el paciente es correcto se realizará el ensayo y se enviará los datos
+del ensayo a ese identificador de paciente.
+
+Si se confirma el paciente se actualiza la tabla de DispositivosPaciente con los que tiene la Tablet configurados.
+Generada para esto clase EquiposEnsayoPaciente, para actuar la tabla de dispositivos de un paciente con los ficheros que dispone la Tablet.
+
+Se actualizan todos lo métodos que solicitan o envían endpoints a la API para indicar "idpaciente", se estable "idpaciente" como valor por defecto en el envío de todos métodos, se dejan también las referencias anteriores para que se funcione con APIs de versiones anteriores.
+
+Se realizan pruebas para enviar información al paciente con id "1234" subiendo se información. 
+
+Se incorpora báscula Clásica para indicar el peso de forma manual.
+
+SE CAPA EN ESTA VERSIÓN LA FUNCIONALIDAD DE MULTI-PACIENTE, ya que se deben de cambiar muchas cosas para que sea configurable
+el paciente de forma individual desde la web.
+
+Se deja la báscula clásica.
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth rev 1.0.167 (24-10-2024) >> PLAYCONSOLE
+-------------------------------------------------------------------------------------------------
+
+Se detecta que la comunicación con el Content Provider sigue sin funcionar correctamente.
+Se establecen los permisos de nuevo la función de petición de permisos en general.
+
+Se detecta que si no esta en el json multiusuario la app peta y queda como sin configurar.
+
+Se arregla y se prueba en debug, funcionando bien.
+VERSION NO FUNCIONAL CORRECTAMENTE
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth rev 1.0.168 y 1.0.169 (24-10-2024 y 25-10-2024) >> PLAYCONSOLE
+-------------------------------------------------------------------------------------------------
+
+Se detecta que sigue fallando cuando la versión se sube a play console y luego se descarga bajo política.
+Se añade un parámetro en el manifiest donde se usan los permisos para el content provider.
+Se añade en la app-backupeviahealth en su manifest en <provider> la propiedad de Android:grantUriPermission=true para permitir que otras aplicaciones soliciten permisos temporales de lectura o escritura para una uri especifica.
+VERSION NO FUNCIONAL CORRECTAMENTE SON PARA PRUEBAS MEDIANTE PLAY CONSOLE
+
+Se modifica el Content Provider eliminado los permisos añadidos y dejándolo sin permisos. rev 1.0.9
+La versión 169 se quitan los permisos y se sube al play console para probar si de esta forma se cargan las uris de forma correcta.
+
+Se comprueba que esta forma de actuar funciona correctamente con play console y aplicando política.
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth rev 1.0.170 (25-10-2024) >> PLAYCONSOLE T1_TEST_EVIAHEALTH_KIOSK
+-------------------------------------------------------------------------------------------------
+
+Se genera una versión donde se quitan los permisos definidos para el content provider y se cambia el método de pedir esos permisos
+en las actividades (Inicio, InserIMEI, QRReader, DispositivoPaciente y SubirDatos) por la petición genérica.
+
+Se arregla el bug de la carga de "multipaciene" en Inicio.json, controlando que exista en el json.
+
+Se cambia en las actividades (get_dataLUNG, get_dataBF600, get_dataHS2S y get_dataClassicScale) que las características de paciente 
+se soliciten con el idpaciente que se establece en el ensayo "Config.getInstance().getIdPacienteEnsayo()"
+
+Se realiza limpieza del software:
+ - Se elimina la función y sus referencias en las actividades que esta comentado, activatePermissionConteProvider()
+ - Se quitan del manifest los perimisos:
+	<!--    <uses-permission android:name="com.eviahealth.eviahealthbackup.READ_MY_DATA" />-->
+	<!--    <uses-permission android:name="com.eviahealth.eviahealthbackup.WRITE_MY_DATA" />-->
+
+Añadido en InsertIMEI.java que muestre en el layout la versión de backup-eviahealth que tiene instalada la Tablet en el
+caso de no estar instalado se indica.
+
+Se añade en el fichero de xxxxx_ensayo.json que se genera al crear la carpeta del ensayo el idpaciente que se está realizando
+el ensayo. Para poder subir datos pendiente al paciente que se realizó el ensayo.
+Se cambia en SubirDatos.java que cuando se suben datos coge el idpaciebte de ese fichero. También se añade que los log generales
+se envíen a la carpeta de idpaciente de la Tablet.
+
+Se adapta la actividad get_dataLUNG.java para que los datos del configuración de lung se lean de la db mediante el idpaciente que
+se está realizando el ensayo.
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth rev 1.0.171 (28-10-2024) >> PLAY CONSOLE T1_TEST_EVIAHEALTH_KIOSK
+-------------------------------------------------------------------------------------------------
+
+Se detecta en la descarga de datos de actividad de la MAMBO 6 en el cambio horario del 28-10-2024 (las 03:00 >> 02:00)
+que la aplicación se queda colgada en el parseo del sueño.
+Cuando se va realizando el parseo de los datos existe un while que finalizaba hasta Date endDate como en el cambio horaio
+endDate es menor que startDate el while nunca finalizaba.
+Se soluciona este bug en el método getListSleepHour() de la clase JS4SleepReport.java
+ 
+-------------------------------------------------------------------------------------------------
+app-eviahealth rev 1.0.172 (11-11-2024) >> T0 TEST EVIAHEALTH KIOSK 
+-------------------------------------------------------------------------------------------------
+
+Para poder acceder a "Play Store" desde el login de usuario "play", se quita el finish() para que la app-eviahealth siga activa
+y no salte de nuevo porque se ha cerrado.
+
+Quito el mostrar semáforo del monitor pulmonar. (Pienso que puede considerarse como un dato de diagnostico o algo parecido)
+y que al paciente le puede agobiar. Ya se muestra en la aplicación web al prescriptor.
+Se cambia el layout de visualización del monitor pulmonar, quitando el semáforo y dejando el mismo formato de visualización que los demás dispositivos.
+Se hace homogénea la visualización de los datos de los dispositivos en todas las actividades.
+
+Actualizado el SDK ihealth a la versión iHealthSDK_2.13.0
+
+Se cambia la estructura de package por dispositivo en la parte de actividades para que sea más legible.
+
+Se actualizan las imágenes de descarga de datos de los dispositivos PO60, PO3M, BP3L que tienen mala resolución para las nuevas tablets.
+Se cambia el layout de visualización de los tensiómetros (bc54, bc85, bc87 y bm57) y se genera otra actividad para mostrar cuando se produce un fallo con cada uno.
+Se cambia el layout de visualización de la pulsera de actividad (MAMBO6) y se genera otra actividad para mostrar cuando se produce un fallo.
+
+Se corrige un bug en la actividad de dispositivos del paciente que al vincular una báscula bf600 seguía mostrándose la imagen de ble.
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth rev 1.0.173 (21-11-2024) >> T0 TEST EVIAHEALTH KIOSK 
+-------------------------------------------------------------------------------------------------
+
+Añadida báscula transtek GBS2012B (solo peso), Se ha añadido en la actividad de DispositivosPaciente y se han creado las actividades de recogida
+y visualización de datos.
+
+Se cambia los límites por defecto del semáforo del lung a verde: 50%, amarrillo: 35% y naranja: 20%
+tanto en la actividad de DispositivosPaciente, config_LUNG y get_dataLUNG.
+
+Se cambia el cálculo del FEV1PB, para obtener este valor se solicita por api.
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth rev 1.0.174 (15-01-2025) >> NO ESTA EN PLAY CONSOLE
+-------------------------------------------------------------------------------------------------
+Actualizado a Android Studio Ladybug | 2024.2.1 Patch 2, Gralde 8.9, java 11
+Actualizado modulo "app" a java 11 (esto elimina varios warning)
+Actualizado modulo "terminaio" a java 11 (esto elimina un warning)
+
+Se arregla en el layout de DispositivosPaciente una refencia de label duplicada (label26) (esto generaba un warning)
+Se elimina de la actividad JoinMeetingActivity un ";" que estaba de más. (esto generaba un warning)
+Se añade la creación del fichero sleepDesfases.txt que guarda el mismo contenido que se envía al ContentProvider url "sleep".
+En el caso de que el ContentProvider falle o devuelva null, se coge el contenido de este fichero. Este proceso es para eliminar
+en un futuro el ContentProvider.
+
+Integración de AlviveCor >> KardiaMobile 6L:
+- Se genera métido para solicitar el JWT al docker nuetro de alivecor.
+- Se añade en la DB el device 17 >> ECG
+- Se añade en la actividad de DispositivosPaciente, la búsqueda de ECG, se filtra por el Kardia6L que es el dispositvo actual.
+- Ya se pueden añadir dispositivos ECG tipo KardiaMobile 6L, falta en la integración si hay que realizar vinculación o configuración adicional.
+
+- Se añaden las actividades para ECG, get_dataKardia6L, view_dataKardia6L, view_failKardia6L.
+- Se realiza una vesión funcional del ECG, a falta de control de errores.
+
+- Se añade en SubirDatos que suba los datos del ECG (params a db y informe en pdf)
+
+- Se decta un bug que al subir ensayos pendientes desde la actividad de inicio, la app peta porque el idpaciente es null. Se arregla.
+
+Esta vesión se para a este nivel despues de la reunión con AliveCor que nos indican que para matener la certificación debemos utilizar sus interfaces
+UI que ellos tienen certificados. (intent)
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth rev 1.0.175 (29-01-2025) >> PLAY CONSOLE T1 TEST EVIAHEALTH KIOSK 
+-------------------------------------------------------------------------------------------------
+Se detecta un bug en la descarga de pasos cuando se realizan descargas que solo se recibe un registro de pasos, en la clase JS2StepSummary
+se dupliaca ese registro probocando que los pasos sean el doble. Corregido
+
+ECG *****
+Se añade en la actividad de ecg que se pueda realizar la grabación del ecg selecionandolo mediante una variable, de esta forma se establece
+de forma manual si el insteraz de grabación del ecg se realiza mediante intent(ui preestablecida por Kardia) o personalizada por viala.
+Se eliminan en el informe pdf del ecg las etiquetas y se añade en notas que si los datos del paciente no se han podido obtener que se 
+utilizan datos por defecto del paciente para generar el informa.
+Se establece el audio en cada pantalla.
+Se estblecen los log para subir al servidor.
+******
+
+*** BUG RELEASE
+Al generar el fichero AAB (release) se detecta que los sdk de iHealth y AliveCorKitLite se pegan generan un error que indica "Type a.a is defined multiple"
+despues de 4 días probando cosas sin existo se prueba la opción de Solución definitiva al error "Type a.a is defined multiple times"
+Dado que ni excluir la clase en Proguard ni renombrar manualmente el .jar han resuelto el problema, vamos a realizar una solución más avanzada modificando el empaquetado de las librerías para eliminar el conflicto de raíz.
+
+Esto significa que se renombra la clase a.a por otro nombre en el fichero del sdk del iHealth. Ver el word de como se realiza el proceso.
+Con este nuevo archivo jar para iHealth se puede realizar la compilación tanto en debug como release sin problemas.
+***************
+
+Se prueba en debug con el ecg y el termómetro de ihealth y funciona correctamente.
+Se sube a play console.
+No es una versión para producción es para compribar como se ve la UI de carda en KIOSK
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth rev 1.0.176 (04-02-2025) >> PLAY CONSOLE T0 TEST EVIAHEALTH KIOSK 
+-------------------------------------------------------------------------------------------------
+Se deviden las dependencia de AliveCorKitLite a su build.gradle y se limia el build.gradle de app
+para que la app quede más limpia.
+Se quitia tambien en app:build.gradle la espificación de las versiones de los sdk de ficheros .jar estableciciendo que coja
+todos lo archivos .jar de la carpeta libs.
+
+****** get_data2Kardia6L.class
+Se añade una nueva activiad vasada en la anterior pero solo con el RecordEkgFragment en visible.
+Se deja inicialmente unos segundos nuestro fondo de pantalla para dar las instrucciones de uso y poner el audio.
+Se deja visible RecordEkgFragment para la grabación del ecg.
+No se muestra la señal después de realizarse el ecg, mostrandose nuestra actividad que muestra el resultado.
+Se prepara esta actividad para usar la configuración para la grabación proveniente de "extras".
+Se crea la clase ConfogirationK6L para gestionar esos parámetros de configuración tanto en esta actividad como en la configuración del dispositivo.
+
+Añadido nuevo error si la lista de dispositivos permtidos por el Kardia está vacía.
+*******  
+
+****** Configuración utilizada para la grabación del electrocardiograma.
+Para que la configuración posible se pueda cambiar se añade un actividad de configuración "config_Kardia6L.class"
+esta añade en extras la configuración que se tienen en cuenta cuando se realiza el enayo.
+ejemplo: "k6l":{"enableLeadsButtons":true,"leadConfiguration":"SIX","filterType":"ENHANCED","maxDuration":60,"resetDuration":10,"mainsFrequency":50}
+
+Se añade en la clase DispositivosPaciente para que abra la actividad de configura y gestione la respuesta de cambios de configuración PARA ECG.
+******
+
+****** DispositivosPaciente.class
+Ahora los tiempos de escaneo es de 15 seg, excepto activida que se aumenta a 30. (configurable por variable constante)
+Solo se utiliza el método ble para escaneo de dispositivos excepto pulseras que se utilizan los dos métodos como antes.
+Se menoja la detección de dispositivo BLE, mediante el flag de SCAN_MODE_LOW_LATENCY. Este modo prioriza la velocidad de escaneo sobre el ahorro de energía. 
+Escaneo continuo sin pausas (sin timeout).
+
+Se añade que para dispositivos monitor pulmonar o ecg detener de escaneo cuando se detecta el primer dispositivo, ya que estos dispositivos solo pueden
+exister 1 activo cuando se está realizando esta operación.
+******
+
+Importante sdk de iHealth tocado para poder realiza build-release.
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth rev 1.0.177 (06-02-2025) >> PLAY CONSOLE T0 TEST EVIAHEALTH KIOSK 
+-------------------------------------------------------------------------------------------------
+Importante sdk de iHealth tocado para poder realiza build-release.
+
+*** Inicio.class
+Se quitan los fondos de "modo avión" y "sin configurar" y se añaden como View dentro de la principal.
+Se adaptan los métodos SetDisplaySinConfiguracion() y SetDisplayModoAvion() para que se muestren de forma correcta.
+Se actualiza el método isNetDisponible() para que se adapte al nivel de api 34 y no se utilicen funciones deprecated.
+***
+
+
+*** Bugs rev 1.0.176
+Se detecta que cuando el algoritmo de Kardia es KAIv2 algún texto no está correcto, se corrige.
+Realizando pruebas a ocurrido que al iniciar el sdk no ha habido ninguna respuesta del método AliveCorKitLite.initialize(), se añaden más logs
+para determinar ubicaciones donde pueda fallar. Se añade un Timer de 20 segundos para que la inicialización se ejecute, en caso contrario saltará
+un timeout indicando el fallo y permitiendo reintentar o continuar.
+***
+-------------------------------------------------------------------------------------------------
+app-eviahealth rev 1.0.178 (07-02-2025) >> PLAY CONSOLE T0 TEST EVIAHEALTH KIOSK 
+-------------------------------------------------------------------------------------------------
+Importante sdk de iHealth tocado para poder realiza build-release.
+
+Eliminadas un par de class en nuestra carpeta de alivecor que no utilizaba.
+Cambiada la dependencia "org.greenrobot:eventbus:3.1.1 >> 3.3.1" este era una warning que se indicaba en play console al subir el nuevo .aab
+
+*** CaracteristicasPaciente.class
+Se añade Fecha de nacimiento, ya que en el ecg es necesario que sea la correcta y no una estimada.
+Se adapta la Patient.class para añadir este parametro.
+***
+
+Actualizada en get_data2Kardia6L.class que cuando se genere el pdf utilice le fecha correcta de nacimiento. Se detecta que la fecha en el informe
+se genera con el formato MM/DD/YYYY se consulta AliveCor si es correcto.
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth rev 1.0.179 (12-02-2025) >> PLAY CONSOLE T0 TEST EVIAHEALTH KIOSK 
+-------------------------------------------------------------------------------------------------
+Importante sdk de iHealth tocado para poder realiza build-release
+
+*** HS2S
+Añadido que coga extras de la DB del servidor. En el caso de no tener conexión con el servidor produce actividad fail.
+***
+
+** Inicio.class
+Cuando la tabla se deja en standby al volver a activar el botón de ensayo estaba dehabilitado pero se mostraba enable.
+Se controla que cuando se pase del evento onPause o onResume se muestre correectamente el botón de inicio, esperando a
+que se realiace la primera consulta de videollamada antes de habilitarlo.
+**
+
+*** CaracteristicasPaciente.class
+Añadido que se incluyam las caracteristicas del paciente en el fichero paciente.json
+***
+
+*** AliveCor
+Cuando se realiza la medición es posible pulsar unos enlaces de ayuda que intentan abrir el navegador para mostrar una página web de alivecor.
+Como nuestras tables no disponen de navegador salta internamente una excepción controlada por el sdk que impiden que se habra y que falle la grabación.
+Para mostrar la ayuda que ofrece alivecor se integra en la app una MyBrowsable.class que hace de navegador cuando el sdk lanza la web esta clase la detecta y
+pone la página web equivalente que muestra la información.
+***
+
+Cambio estructura de packages en la app para que esté más ordenado el código.
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth rev 1.0.180 (10-03-2025) >> T0_TEST_EVIAHEALTH_KIOSK
+-------------------------------------------------------------------------------------------------
+Importante sdk de iHealth tocado para poder realiza build-release junto alivecor.
+
+*** get_data2Hardia6L.class
+Quita del informe la duplicidad del comentario en notas ya que con la versión de KAIv2 son los mismos textos.
+***
+
+*** Limieza de código
+Se eliminan varias clases que en la evolución de la app han dejado de usarse o no se han usado nunca.
+***
+
+Se cambia class QRReader a extends BaseActivity, para que se habra en pantalla completa cuando no esté en quiosco.
+
+Se han restucturado directorios y fichero para que tenga una estructura más adecuada para la realización de certificación
+
+*** LOGIN TECNICO + DOBLE AUTENTIFICACION
+
+Añadidas dos actividades para realizar el login con usuario y contraseña de un administrador para entrar a la configuración de
+dispositivos. LoginTecnico.class y DobleAutenticacion.class
+
+Funcionamiento cuando la tablet no tiene configurada ni imei ni la url, se deja acceder mediante técnico como antes,
+para poder establer el imei inicial y escanear el qr. Cuando ambas están configuradas es porque la tablet tiene
+un paciente establecido y para entrar en la configuración de dispositivos se tendrá que poner el usuario y contraseña
+de un administrador que esté de alta en la instalación. Si este administrador tiene la doble autentificación activa,
+se solucitará el pin para poder entrar. Se esteblecen 3 intentos tanto en login como en el pin code.
+
+Añadidas las clase para la lógica EPService.class y EPImplementation.class estas permiten realizar un login de un
+usuario como si fuera por navegador web.
+Para la doble autentificación se utiliza la función de la api que se utiliza en la web.
+***
+
+*** get_dataNT13B.java
+Se detecta en la actividad del termómetro una errata en el texto 3 y cuando se escucha en audio.
+Se corrige.
+***
+
+*** Subido la versión a nivel de API 35.
+compileSdk 35 
+targetSdk 35
+Actualizadas dependencia para que funionen en API 35
+***
+
+*** Meeting de Zoom
+Actualizado a la versión de SDK v6.3.6.27190
+Para futuros cambios del SDK ya que la interfaz InMeetingServiceListener en cada versión cambia se añade una
+interfaz adpater intermedia InMeetingServiceListenerAdapter y se cambia en la actividad JoinMeetingActivity para 
+solo definir los métodos que utilizamos. 
+En las actualizxaciones solo abrá que tocar el InMeetingServiceListenerAdapter para que funcione correctamente.
+Con este cambio está más saneado la actividad JoinMeetingActivity.
+****
+
+Se actualiza el sdk de ALiveCorKitLite a la versión 1.6.4
+
+-------------------------------------------------------------------------------------------------
+app-eviahealth rev 1.0.181 (25-04-2025) >> T0_TEST_EVIAHEALTH_KIOSK
+-------------------------------------------------------------------------------------------------
+Versión: (Todas son las originales)
+  - SDK ALiveCorKitLite v1.6.4
+  - SDK iHealth v2.13.0
+  - SDK Meeting Zoom v6.3.6.27190
+  - SDK lifesense-device-ble-2.3.9-build1
+
+**** CONTENT PROVIDER "com.eviahealth.eviahealthbackup"
+Se elimina todo los relacionado con el Content-Provider ya que no se usa y dá problemas con android 15
+Se elimina la referencia del Manifest.
+Se elimina todo los archivos del package utils\uris
+* MAPFileUri.java, UriAccess.java y UriContact.java
+
+Para mantener un de lasfuncionalidades que hacia la clase MAPFileUri se crea la ENUM "FileConfig" en el package utils\FileAccess
+para utilizar en actividad LoginOption.java, en vez de MAPFileUri.
+****
+
+**** SE ELIMINA >> GUARDAR ENSAYOS EN TABLET
+Cuando se subian los datos de un ensayo todos los ficheros se guardaban en la carpeta de "_subido" estos ficheros
+nunca se eliminaban.
+En esta versión se los ficheros se han subido correctamente en el servidor los ficheros se eliminan.
+Se elimina la clase FileMoveUtil.java que contenía las funciones de mover los archivos.
+Se crea el método deleteFile() en la clase FileAccess para eliminar estos ficheros.  
+Este cambio se ha aplicado en la clase SubirDatos.java
+****
+
+*** Ficheros
+Se quita la ruta private static File PATH = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Android/data/com.eviahealth.eviahealth/files/");
+y se establece de forma correcta, añadiendo en la clase FileAccess el método init() que establece las variables de PATH de forma correcta.
+Se aplica FileAccess.init() en la clase Aplicacion que es la inicial de la app.
+Se cambian PATH de FileFuntions por la de FileAccess.getPATH_FILES().
+****
+
+*** Timber
+Eliminada la dependencia de timber en app, ya que se puede sustituir por la de Log de android.
+La dependencia se añade en las dependencias de AliveCorKitLite ya que en esta es obligatoria.
+***
+
+*** Foto Paciente
+Al salir de la acticidad de CameraFoto si el archivo de photo.png existe la elimina.
+***
+
+*** API mejoras para certificación y unificar filosofías.
+>> package BackendConector
+Mejorada la clase ApiConnector, controla mejor los errores el manejo de la comunicación se pasa de utiliar HttpURLConnection a HttpsURLConnection
+para forzar comunicaciones seguras. Se comentan todos los métodos para que se comprendan mejor.
+
+>> package tecnico
+Se elimina código que no se utiliza y se pasa de utiliar HttpURLConnection a HttpsURLConnection
+Se quita el uso de context y se utiliza host de ApiConnector
+
+>> package meeting
+Se elimna código que no se utiliza, se pasa de utiliar HttpURLConnection a HttpsURLConnection, se crea una nueva ENUM (MeetingUrl)
+con la url de la api.
+Se cogen token y host desde la clase ApiConnector, para utilizar en las clase APIServiceImpl y EAImplementation.
+***
+
+*** Dependencias
+Actualizada las dependencias de la cámara de la versión 1.3.3 a la 1.4.1
+***
+
+*** BUG PO60
+Realizando pruebas con la versión 1.0.180 se detecta un fallo en el PO60, se queda pensando y no se detecta que finalice la conexión
+con el dispositivo.
+
+2025-04-24 09:53:27;GET_DATAPO60;MAC mDeviceAddress: FF:8D:F0:FC:3C:00;
+2025-04-24 09:53:27;GET_DATAPO60;FILEACCESS READ: dateTestFile: 2025-04-24, dateTest: 2025-04-24;
+2025-04-24 09:53:33;PO60CONTROL;mPO60control.initialize();
+2025-04-24 09:53:33;PO60CONTROL;Connect: FF:8D:F0:FC:3C:00;
+2025-04-24 09:58:55;GET_DATAPO60;FILEACCESS READ: dateTestFile: 2025-04-24, dateTest: 2025-04-24;
+2025-04-25 07:59:11;GET_DATAPO60;FILEACCESS READ: dateTestFile: 2025-04-24, dateTest: 2025-04-25;
+2025-04-25 07:59:11;GET_DATAPO60;ENSAYO ANTERIOR NO FINALIZADO;
+2025-04-25 07:59:12;PO60CONTROL;mPO60control.onDestroy();
+
+Se añaden nuevos logs para determinar mejor el motivo.
+Se añade timer TIMEOUT >> Tiempo máximo para realizarse la medición completa de 3 minutos.
+***
+
+ESTA VERSIÓN YA NO NECESITA TENER INSTALADO "com.eviahealth.eviahealthbackup".
+-------------------------------------------------------------------------------------------------
+app-eviahealth rev 1.0.182 (16-05-2025) >> T0_TEST_EVIAHEALTH_KIOSK
+-------------------------------------------------------------------------------------------------
+
+Añadidos nuevos endpoint.
+*** ECG
+Se ha añadido la API un endpoint que hace de puente ente la plataforma eViaHealth y el Docker AliveCor para la optención del JWT.
+Se añaden los métodos para realizar la consulta atravé se la API.
+****
+
+*** Concentimineto.class
+Se añade un cuadro de concentimiento para la conformirmación del paciente antes de realizar su primer ensayo.
+Para ello se han utilizado 3 endpoint nuevos:
+1. Para saber si el paciente ya a dado su consentimiento.
+2. Otro para obtener el texto a mostrar en el consentimineto através de la API.
+3. Para marcar como concentimiento concedido.
+
+Esta clase se realiza como visor de html básico, para poder dar una estructura el texto que se visializa.
+***
+
+*** LUNG
+Cambiada imagen de TEST, se rodea la palabra TEST con un ovalo verde para que se identifique correctamente cuando
+se debe iniciar, antes no se notaba el cambio entre pantallas.
+
+Cambiado el texto de voz del resultado indicando los valores de PEF, FEV1 y FEV6 obtenidos.
+*****
+
+*** NT13B (mejora el resultado de la medición)
+Cambiadas imagenes de fondo donde se cambia el texto del punto 3 de:
+"Pulse el botón MEASURE y mantenga  el  termómetro a unos 3 cm de la frente. El termómetro dejará de pitar cuando finalice la medida."
+A
+
+
+
+ESTA VERSIÓN NO NECESITA TENER INSTALADO "com.eviahealth.eviahealthbackup".
+-------------------------------------------------------------------------------------------------
+app-eviahealth rev 1.0.183 (27-05-2025) >> T0_TEST_EVIAHEALTH_KIOSK Y A A5_EVIAHEALTH_KIOSK
+-------------------------------------------------------------------------------------------------
+
+*** NT13B
+Faltaba camnbiar la frase en el audio a"Mantenga  el  termómetro a unos 3 cm de la frente y pulse el botón MEASURE. ....."
+***
+
+*** LUNG
+detectado en una prueba que al detectar el lung y luego moverse la pilas y apagarse se puede quedar en un proceso que el test no sigue.
+Se pone un timeout de 5 minutos de tiempo máximo por reintento, esto establece (conexión + test)
+*******
+-------------------------------------------------------------------------------------------------
+app-eviahealth rev 1.0.184 (XX-XX-2025) >> 
+-------------------------------------------------------------------------------------------------
+
+
+
+-------------------------------------------------------------------------------------------------
+
+

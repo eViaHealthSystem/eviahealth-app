@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/lina_divisoria">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/mensajeizquierda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/questrial"
+            android:maxWidth="250dp"
+            android:minWidth="250dp"
+            android:text="pregunta"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/grupo_5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/grupo_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/opcion0"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/drawable_1"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/questrial"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/recurrente"
+                android:textSize="24sp" />
+
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/opcion1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/drawable_1"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/questrial"
+                android:text="1"
+                android:textAlignment="center"
+                android:textColor="@color/recurrente"
+                android:textSize="24sp" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/opcion2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/drawable_1"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/questrial"
+                android:text="2"
+                android:textAlignment="center"
+                android:textColor="@color/recurrente"
+                android:textSize="24sp" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/opcion3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/drawable_1"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/questrial"
+                android:text="3"
+                android:textAlignment="center"
+                android:textColor="@color/recurrente"
+                android:textSize="24sp" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/opcion4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/drawable_1"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/questrial"
+                android:text="4"
+                android:textAlignment="center"
+                android:textColor="@color/recurrente"
+                android:textSize="24sp" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/opcion5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/drawable_1"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/questrial"
+                android:text="5"
+                android:textAlignment="center"
+                android:textColor="@color/recurrente"
+                android:textSize="24sp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/mensajederecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/questrial"
+            android:maxWidth="250dp"
+            android:minWidth="250dp"
+            android:text="respuesta"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/grupo_5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--    Button Audio-->
+        <ImageButton
+            android:id="@+id/imageButtonAudio"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/custom_imagen_button"
+            android:onClick="onClick"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/grupo_5"
+            app:layout_constraintVertical_bias="0.7"
+            app:srcCompat="@drawable/audio_on" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

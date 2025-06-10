@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="horizontal"
+    android:background="@drawable/fondo_base"
+    android:keepScreenOn="true"
+    tools:context=".ui.admin.fichapaciente.CaracteristicasPaciente">
+
+    <!--    Título-->
+    <TextView
+        android:id="@+id/PA_txtTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/questrial"
+        android:singleLine="false"
+        android:text="Características del paciente"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    Texto Genero-->
+    <TextView
+        android:id="@+id/PA_txtGenero"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:text="Género"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.20999998" />
+
+    <Spinner
+        android:id="@+id/PA_cmbGenero"
+        android:layout_width="200dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/PA_txtGenero"
+        app:layout_constraintStart_toEndOf="@+id/PA_txtGenero"
+        app:layout_constraintTop_toTopOf="@+id/PA_txtGenero"
+        app:strokeColor="@color/black"
+        app:strokeWidth="6dp" />
+
+    <!-- Texto Edad-->
+    <TextView
+        android:id="@+id/PA_txtEdad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edad"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintBottom_toBottomOf="@+id/PA_Edad"
+        app:layout_constraintStart_toStartOf="@+id/PA_txtGenero"
+        app:layout_constraintTop_toTopOf="@+id/PA_Edad" />
+
+    <NumberPicker
+        android:id="@+id/PA_Edad"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintStart_toStartOf="@+id/PA_cmbGenero"
+        app:layout_constraintTop_toBottomOf="@+id/PA_cmbGenero"></NumberPicker>
+
+<!--Texto Altura-->
+    <TextView
+        android:id="@+id/PA_Altura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Altura"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintBottom_toBottomOf="@+id/PA_NAltura"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/PA_txtEdad"
+        app:layout_constraintTop_toTopOf="@+id/PA_NAltura" />
+
+    <NumberPicker
+        android:id="@+id/PA_NAltura"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintStart_toStartOf="@+id/PA_Edad"
+        app:layout_constraintTop_toBottomOf="@+id/PA_Edad"></NumberPicker>
+
+    <NumberPicker
+        android:id="@+id/PA_CM"
+        android:layout_width="40dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toEndOf="@+id/PA_NAltura"
+        app:layout_constraintTop_toTopOf="@+id/PA_NAltura"></NumberPicker>
+
+<!--    Texto Peso-->
+    <TextView
+        android:id="@+id/PA_txtPeso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Peso"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintBottom_toBottomOf="@+id/PA_PesoCentenas"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/PA_Altura"
+        app:layout_constraintTop_toTopOf="@+id/PA_PesoCentenas" />
+
+    <NumberPicker
+        android:id="@+id/PA_PesoCentenas"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintStart_toStartOf="@+id/PA_cmbGenero"
+        app:layout_constraintTop_toBottomOf="@+id/PA_NAltura"></NumberPicker>
+
+    <NumberPicker
+        android:id="@+id/PA_PesoDecenas"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toEndOf="@+id/PA_PesoCentenas"
+        app:layout_constraintTop_toTopOf="@+id/PA_PesoCentenas"></NumberPicker>
+
+    <NumberPicker
+        android:id="@+id/PA_PesoUnidades"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toEndOf="@+id/PA_PesoDecenas"
+        app:layout_constraintTop_toTopOf="@+id/PA_PesoDecenas"></NumberPicker>
+
+    <NumberPicker
+        android:id="@+id/PA_KG"
+        android:layout_width="60dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toEndOf="@+id/PA_PesoUnidades"
+        app:layout_constraintTop_toTopOf="@+id/PA_PesoUnidades"></NumberPicker>
+
+<!--    Imagen salir-->
+    <ImageView
+        android:id="@+id/PA_imfAtras"
+        android:layout_width="75dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/fatras" />
+
+<!--    Boton guardar-->
+    <Button
+        android:id="@+id/PA_btSavePatient"
+        android:layout_width="170dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@color/blueLogin"
+        android:onClick="onClick"
+        android:text="GUARDAR\nINFORMACIÓN"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha de\nNacimiento"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintBottom_toBottomOf="@+id/PA_txtEdad"
+        app:layout_constraintStart_toEndOf="@+id/PA_CM"
+        app:layout_constraintTop_toTopOf="@+id/PA_txtEdad" />
+
+    <EditText
+        android:id="@+id/et_fecha_nacimiento"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:ems="10"
+        android:focusable="false"
+        android:hint="06/02/2025"
+        android:inputType="none"
+        android:textSize="24dp"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="@+id/textView18"
+        app:layout_constraintStart_toEndOf="@+id/textView18"
+        app:layout_constraintTop_toTopOf="@+id/textView18" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

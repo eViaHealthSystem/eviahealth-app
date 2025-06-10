@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="820dp"
+    android:layout_height="560dp"
+    android:background="@color/transparente"
+    android:id="@+id/FrameConfirmMeeting"
+    tools:context=".ui.meeting.FrameDialogConfirmar">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--    Marco-->
+        <ImageView
+            android:id="@+id/marco"
+            android:layout_width="600dp"
+            android:layout_height="300dp"
+            android:background="@drawable/rounded_border"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--    Imagen doctor-->
+        <ImageView
+            android:id="@+id/imgdoctor"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="-55dp"
+            android:layout_marginEnd="-55dp"
+            app:layout_constraintEnd_toStartOf="@+id/marco"
+            app:layout_constraintTop_toTopOf="@+id/marco"
+            app:srcCompat="@drawable/doctor2" />
+
+        <!--    Imagen zomm-->
+        <ImageView
+            android:id="@+id/imgzoom"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/marco"
+            app:layout_constraintTop_toTopOf="@+id/marco"
+            app:srcCompat="@drawable/zoom" />
+
+        <!--    Button Aceptar-->
+        <Button
+            android:id="@+id/buttonAceptar"
+            android:layout_width="183dp"
+            android:layout_height="49dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="40dp"
+            android:background="@color/verdoso"
+            app:backgroundTint="@color/verdoso"
+            android:fontFamily="@font/questrial"
+            android:text="ACEPTAR"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/marco"
+            app:layout_constraintEnd_toEndOf="@+id/marco" />
+
+        <!--    Button Rechazar-->
+        <Button
+            android:id="@+id/buttonRechazar"
+            android:layout_width="183dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginBottom="40dp"
+            android:background="@color/rojizo"
+            app:backgroundTint="@color/rojizo"
+            android:fontFamily="@font/questrial"
+            android:text="RECHAZAR"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/marco"
+            app:layout_constraintStart_toStartOf="@+id/marco" />
+
+        <!--    Text Titulo-->
+        <TextView
+            android:id="@+id/textTitulo"
+            android:layout_width="496dp"
+            android:layout_height="77dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="40dp"
+            android:text="Su médico le ha convocado a una\nvideollamada el próximo:"
+            android:fontFamily="@font/questrial"
+            android:textSize="28sp"
+            android:onClick="onClick"
+            app:layout_constraintStart_toStartOf="@+id/marco"
+            app:layout_constraintTop_toTopOf="@+id/marco" />
+
+        <!--    Texto Fecha Meeting-->
+        <TextView
+            android:id="@+id/textFechaMeeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2023-05-30 12:00"
+            android:fontFamily="@font/questrial"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:onClick="onClick"
+            app:layout_constraintBottom_toTopOf="@+id/buttonRechazar"
+            app:layout_constraintEnd_toEndOf="@+id/marco"
+            app:layout_constraintStart_toStartOf="@+id/marco"
+            app:layout_constraintTop_toBottomOf="@+id/textTitulo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

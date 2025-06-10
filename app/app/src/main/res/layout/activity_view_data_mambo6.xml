@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_base_logo"
+    tools:context=".ui.ensayo.pulsera.mambo6.view_dataMAMBO6">
+
+    <TextView
+        android:id="@+id/m6_txtTitulo_pul"
+        android:layout_width="700dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="130dp"
+        android:fontFamily="@font/questrial"
+        android:singleLine="false"
+        android:text="Sus datos de actividad se han descargado correctamente.\n\nHoy ha realizado la siguente actividad:"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    Actividad-->
+    <TextView
+        android:id="@+id/txtActividad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/soleilbold"
+        android:text="Actividad"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="@+id/m6_txtTitulo_pul"
+        app:layout_constraintTop_toBottomOf="@+id/m6_txtTitulo_pul" />
+
+    <TextView
+        android:id="@+id/txtPasos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/soleil_light"
+        android:text="pasos"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@+id/txtActividad"
+        app:layout_constraintTop_toBottomOf="@+id/txtActividad" />
+
+    <TextView
+        android:id="@+id/m6_pasos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/soleilbold"
+        android:text="95"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtPasos"
+        app:layout_constraintStart_toStartOf="@+id/m6_nivel"
+        app:layout_constraintTop_toTopOf="@+id/txtActividad" />
+
+<!--    Batería-->
+    <TextView
+        android:id="@+id/txtBat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/soleilbold"
+        android:text="Nivel de batería"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="@+id/m6_txtTitulo_pul"
+        app:layout_constraintTop_toBottomOf="@+id/txtPasos" />
+
+    <TextView
+        android:id="@+id/txtPorcentaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/soleil_light"
+        android:text="%"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@+id/txtBat"
+        app:layout_constraintTop_toBottomOf="@+id/txtBat" />
+
+    <TextView
+        android:id="@+id/m6_nivel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:fontFamily="@font/soleilbold"
+        android:text="100"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtPorcentaje"
+        app:layout_constraintStart_toEndOf="@+id/txtBat"
+        app:layout_constraintTop_toTopOf="@+id/txtBat" />
+
+    <TextView
+        android:id="@+id/txtbateria_m6"
+        android:layout_width="320dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/soleilbold"
+        android:maxLines="2"
+        android:minLines="2"
+        android:singleLine="false"
+        android:text="Batería baja, porfavor ponga a cargar el dispositivo."
+        android:textColor="@color/colorAccent"
+        android:textSize="14sp"
+        android:visibility="visible"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="@+id/m6_nivel"
+        app:layout_constraintStart_toStartOf="@+id/m6_nivel"
+        app:layout_constraintTop_toBottomOf="@+id/m6_nivel" />
+
+
+    <Button
+        android:id="@+id/btderecha_m6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/boton_base"
+        android:enabled="false"
+        android:fontFamily="@font/questrial"
+        android:onClick="onClick"
+        android:text="Continuar"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/MB6imageView13"
+        android:layout_width="295dp"
+        android:layout_height="326dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mambo6" />
+
+    <!--    Button Audio-->
+    <ImageButton
+        android:id="@+id/imageButtonAudio"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/custom_imagen_button"
+        android:onClick="onClick"
+        android:padding="8dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96"
+        app:srcCompat="@drawable/audio_on" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

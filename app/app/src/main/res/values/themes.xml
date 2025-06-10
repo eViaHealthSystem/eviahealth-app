@@ -1,0 +1,23 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.EVIAHEALTH" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.EVIAHEALTH" parent="Base.Theme.EVIAHEALTH" />
+
+    <style name="btnBordesRedondos">
+        <item name="android:background">@drawable/borde_redondo</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Theme.LoginTecnico" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Personaliza colores y estilos específicos si es necesario -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+</resources>

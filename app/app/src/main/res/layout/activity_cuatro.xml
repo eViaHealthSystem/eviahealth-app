@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lltres"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/lina_divisoria"
+    android:orientation="vertical"
+    tools:context=".Encuesta">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/mensajepregunta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="100dp"
+            android:fontFamily="@font/questrial"
+            android:text="texto_pregunta"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/grupo_4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/grupo_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/opcion0"
+                android:layout_height="60dp"
+                android:background="@drawable/drawable_1"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/questrial"
+                android:minWidth="160dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="white"
+                android:textAlignment="center"
+                android:textColor="@color/recurrente"
+                android:textSize="26sp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="171dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                tools:layout_editor_absoluteX="177dp"
+                tools:layout_editor_absoluteY="171dp" />
+
+            <RadioButton
+                android:id="@+id/opcion1"
+                android:layout_height="60dp"
+                android:background="@drawable/drawable_1"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/questrial"
+                android:minWidth="160dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="AMARILLENTO"
+                android:textAlignment="center"
+                android:textColor="@color/recurrente"
+                android:textSize="26sp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                tools:layout_editor_absoluteX="390dp"
+                tools:layout_editor_absoluteY="171dp" />
+
+            <RadioButton
+                android:id="@+id/opcion2"
+                android:layout_height="60dp"
+                android:background="@drawable/drawable_1"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/questrial"
+                android:minWidth="160dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="verde"
+                android:textAlignment="center"
+                android:textColor="@color/recurrente"
+                android:textSize="26sp"
+                tools:layout_editor_absoluteX="410dp"
+                tools:layout_editor_absoluteY="171dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                tools:layout_editor_absoluteX="570dp"
+                tools:layout_editor_absoluteY="171dp" />
+
+            <RadioButton
+                android:id="@+id/opcion3"
+                android:layout_height="60dp"
+                android:background="@drawable/drawable_1"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/questrial"
+                android:minWidth="160dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="marron"
+                android:textAlignment="center"
+                android:textColor="@color/recurrente"
+                android:textSize="26sp"
+                tools:layout_editor_absoluteX="591dp"
+                tools:layout_editor_absoluteY="171dp" />
+
+        </RadioGroup>
+
+        <!--    Button Audio-->
+        <ImageButton
+            android:id="@+id/imageButtonAudio"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/custom_imagen_button"
+            android:onClick="onClick"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/grupo_4"
+            app:layout_constraintVertical_bias="0.7"
+            app:srcCompat="@drawable/audio_on" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

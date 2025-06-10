@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="horizontal"
+    android:background="@drawable/fondo_base"
+    android:keepScreenOn="true"
+    tools:context=".ui.config.ihealth.config_HS2S">
+
+    <!--    Titulo-->
+    <TextView
+        android:id="@+id/CHS2S_txtTitulo"
+        android:layout_width="807dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/questrial"
+        android:singleLine="false"
+        android:text="Configuración dispositivo HS2S [00:00:00:00:00:00]"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    Genero-->
+    <TextView
+        android:id="@+id/txt00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Género:"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CHS2S_txtTitulo" />
+
+    <TextView
+        android:id="@+id/CHS2S_txtGenero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:text="Hombre"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintStart_toEndOf="@+id/txt00"
+        app:layout_constraintTop_toTopOf="@+id/txt00" />
+
+    <!--    Edad-->
+    <TextView
+        android:id="@+id/txt01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Edad:"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintStart_toStartOf="@+id/txt00"
+        app:layout_constraintTop_toBottomOf="@+id/txt00" />
+
+    <TextView
+        android:id="@+id/CHS2S_txtEdad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="60"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintStart_toStartOf="@+id/CHS2S_txtGenero"
+        app:layout_constraintTop_toTopOf="@+id/txt01" />
+
+    <!--    Peso-->
+    <TextView
+        android:id="@+id/txt02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:text="Peso:"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintStart_toEndOf="@+id/CHS2S_txtGenero"
+        app:layout_constraintTop_toTopOf="@+id/txt00" />
+
+    <TextView
+        android:id="@+id/CHS2S_txtPeso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:text="080"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/txt02"
+        app:layout_constraintTop_toTopOf="@+id/txt02" />
+
+    <TextView
+        android:id="@+id/txt03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Kg"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintStart_toEndOf="@+id/CHS2S_txtPeso"
+        app:layout_constraintTop_toTopOf="@+id/CHS2S_txtPeso" />
+
+    <!--    Altura-->
+    <TextView
+        android:id="@+id/txt04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Altura:"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintStart_toStartOf="@+id/txt02"
+        app:layout_constraintTop_toTopOf="@+id/txt01" />
+
+    <TextView
+        android:id="@+id/CHS2S_txtAltura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="125"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/CHS2S_txtPeso"
+        app:layout_constraintTop_toTopOf="@+id/txt04" />
+
+    <TextView
+        android:id="@+id/txt05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="cm"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintStart_toEndOf="@+id/CHS2S_txtAltura"
+        app:layout_constraintTop_toTopOf="@+id/CHS2S_txtAltura" />
+
+    <TextView
+        android:id="@+id/CHS2S_txtInfoPaciente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Valores por defecto de paciente, debe actualizarlos."
+        android:textSize="20dp"
+        app:fontFamily="@font/soleilbold"
+        app:layout_constraintStart_toStartOf="@+id/txt01"
+        app:layout_constraintTop_toBottomOf="@+id/txt01" />
+
+    <!--    Medicion Grasa Corporal-->
+    <TextView
+        android:id="@+id/CHS2S_txtImpedance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Medición\nGrasa Corporal"
+        android:textSize="24dp"
+        app:fontFamily="@font/questrial"
+        app:layout_constraintStart_toStartOf="@+id/txt00"
+        app:layout_constraintTop_toBottomOf="@+id/txt01" />
+
+    <!--   Spinner Grasa Corporal-->
+    <Spinner
+        android:id="@+id/CHS2S_cmbIMpedance"
+        android:layout_width="100dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/CHS2S_txtImpedance"
+        app:layout_constraintStart_toEndOf="@+id/CHS2S_txtImpedance"
+        app:layout_constraintTop_toTopOf="@+id/CHS2S_txtImpedance"
+        app:strokeColor="@color/black"
+        app:strokeWidth="16dp" />
+
+    <Button
+        android:id="@+id/CHS2S_btSavePatient"
+        android:layout_width="170dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/blueLogin"
+        android:onClick="onClick"
+        android:text="GUARDAR\nINFORMACIÓN"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/CHS2S_cmbIMpedance"
+        app:layout_constraintStart_toStartOf="@+id/CHS2S_txtImpedance"
+        app:layout_constraintTop_toBottomOf="@+id/CHS2S_txtImpedance" />
+
+    <TextView
+        android:id="@+id/CHS2S_txtStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Status"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/CSCROLLER_ID"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/CSCROLLER_ID" />
+
+    <!--button cofigurar-->
+    <ScrollView
+        android:id="@+id/CSCROLLER_ID"
+        android:layout_width="1100dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="4dp"
+        android:fillViewport="true"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/CHS2S_imfAtras">
+
+        <TextView
+            android:id="@+id/CHS2S_txtResult"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@android:drawable/editbox_background"
+            android:text="Result info"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/CbtMB6_SETTINGS" />
+    </ScrollView>
+
+    <!--button specifyOnlineUser-->
+    <Button
+        android:id="@+id/CHS2S_btConfigurar"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:background="@color/blueLogin"
+        android:onClick="onClick"
+        android:text="CREAR\nUSUARIO"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/CHS2S_btSpecifyOnlineUser"
+        app:layout_constraintTop_toTopOf="@+id/CHS2S_btGetUserInfo" />
+
+    <Button
+        android:id="@+id/CHS2S_btSpecifyOnlineUser"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:background="@color/blueLogin"
+        android:onClick="onClick"
+        android:text="Specify\nOnline User"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/CHS2S_btDeleteHistoryData"
+        app:layout_constraintTop_toTopOf="@+id/CHS2S_btSpecifyOfflineData" />
+
+    <!--button SpecifyOfflineData-->
+    <Button
+        android:id="@+id/CHS2S_btSpecifyOfflineData"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="40dp"
+        android:background="@color/blueLogin"
+        android:onClick="onClick"
+        android:text="Specify\nOffline Data"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/CHS2S_btFactoryReset"
+        app:layout_constraintEnd_toEndOf="@+id/CHS2S_btFactoryReset" />
+
+    <!--button DeleteHistoryData-->
+
+    <!--button factory reset-->
+    <Button
+        android:id="@+id/CHS2S_btDeleteHistoryData"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="60dp"
+        android:background="@color/blueLogin"
+        android:onClick="onClick"
+        android:text="Delete\nHistory Data"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/CHS2S_btFactoryReset"
+        app:layout_constraintTop_toTopOf="@+id/CHS2S_btFactoryReset" />
+
+    <Button
+        android:id="@+id/CHS2S_btFactoryReset"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:background="@color/blueLogin"
+        android:onClick="onClick"
+        android:text="RESTORE\nFACTORY"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/CSCROLLER_ID"
+        app:layout_constraintEnd_toEndOf="@+id/CSCROLLER_ID"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75" />
+
+    <!--button Get User Info-->
+    <Button
+        android:id="@+id/CHS2S_btGetUserInfo"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="40dp"
+        android:background="@color/blueLogin"
+        android:onClick="onClick"
+        android:text="GET USER\nINFO"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/CHS2S_btSpecifyOfflineData"
+        app:layout_constraintEnd_toEndOf="@+id/CHS2S_btSpecifyOfflineData" />
+
+    <!--button Delete User-->
+
+    <!--circulo de proceso-->
+
+    <!--    texto con el circulo de proceso-->
+    <ProgressBar
+        android:id="@+id/CHS2S_ProgressBar"
+        android:layout_width="182dp"
+        android:layout_height="193dp"
+        android:indeterminateTint="@color/recurrente"
+        android:progressBackgroundTint="@color/recurrente"
+        android:progressTint="@color/recurrente"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/CHS2S_txtProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="..."
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/CHS2S_ProgressBar"
+        app:layout_constraintEnd_toEndOf="@+id/CHS2S_ProgressBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/CHS2S_ProgressBar"
+        app:layout_constraintTop_toTopOf="@+id/CHS2S_ProgressBar" />
+
+    <!--    rallas para limitar limite inferior de la pantalla-->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="-----------------"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!--    atras-->
+    <ImageView
+        android:id="@+id/CHS2S_imfAtras"
+        android:layout_width="95dp"
+        android:layout_height="94dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/fatras" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
