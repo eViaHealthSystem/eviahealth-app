@@ -35,14 +35,14 @@ Su propósito es permitir a pacientes y cuidadores — en domicilio o residencia
 
 ```mermaid
 graph TD
-  subgraph eViaHealth App (Android)
-    ui[UI]
-    api[API Layer]
-    bluetooth[BT Manager]
-    devices[Device SDK / SOUP]
-    models[Domain Models]
-    meeting[Meeting SDK]
-    utils[Utils]
+  subgraph eViaHealth App Android
+    ui["UI"]
+    api["API Layer"]
+    bluetooth["BT Manager"]
+    devices["Device SDK / SOUP"]
+    models["Domain Models"]
+    meeting["Meeting SDK"]
+    utils["Utils"]
   end
   ui --> api
   api --> bluetooth --> devices

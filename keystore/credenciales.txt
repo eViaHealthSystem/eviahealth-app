@@ -1,4 +1,0 @@
-Credenciales:
-Key store: _eviahealth@321
-Key alias: upload
-Key password: _eviahealth@321
